@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashmita Pal - Data Analyst Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0891b2;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0c4a6e 0%, #0891b2 50%, #06b6d4 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.85;
+            animation: fadeInUp 1s ease 0.3s backwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: #0891b2;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease 0.4s backwards;
+            margin: 0 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            padding: 5rem 10%;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #0c4a6e;
+        }
+
+        .about {
+            background: #f0f9ff;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #334155;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(8, 145, 178, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(8, 145, 178, 0.25);
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+        }
+
+        .stat-item:hover .stat-icon {
+            transform: scale(1.2);
+        }
+
+        .stat-item:hover h3,
+        .stat-item:hover p {
+            color: white;
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .stat-item h3 {
+            font-size: 1.3rem;
+            color: #0891b2;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .stat-item p {
+            color: #64748b;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .experience-timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .experience-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #0891b2;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 30px rgba(8, 145, 178, 0.15);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .experience-header h3 {
+            color: #0c4a6e;
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .experience-header .company {
+            color: #0891b2;
+            font-weight: 600;
+        }
+
+        .experience-header .date {
+            color: #64748b;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .experience-item ul {
+            margin-left: 1.5rem;
+            color: #475569;
+        }
+
+        .experience-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        .projects {
+            background: #f0f9ff;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(8, 145, 178, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #0c4a6e 0%, #0891b2 50%, #06b6d4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            margin-bottom: 0.5rem;
+            color: #0c4a6e;
+        }
+
+        .project-content .tech {
+            color: #0891b2;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .project-content p {
+            color: #475569;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-link {
+            color: #0891b2;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: #06b6d4;
+        }
+
+        .skills-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            margin-bottom: 3rem;
+        }
+
+        .skill-category h3 {
+            color: #0c4a6e;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #0891b2;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            color: #0c4a6e;
+            font-weight: 500;
+            box-shadow: 0 3px 10px rgba(8, 145, 178, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(8, 145, 178, 0.25);
+            background: #0891b2;
+            color: white;
+        }
+
+        .contact {
+            background: #f0f9ff;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            font-size: 1.1rem;
+            color: #475569;
+        }
+
+        .contact-item strong {
+            color: #0c4a6e;
+        }
+
+        .contact-item a {
+            color: #0891b2;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            color: #06b6d4;
+        }
+
+        footer {
+            background: #0c4a6e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 3rem 5%;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Ashmita Pal</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Ashmita Pal</h1>
+            <p>Data Analyst | Analytics Engineer</p>
+            <p class="subtitle">Data whispers patterns — I turn them into insights</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+            <a href="https://www.linkedin.com/in/ashmita-pal" class="cta-button secondary" target="_blank">LinkedIn</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>Data Analyst with 2+ years of experience and a Master's in Data Analytics Engineering from Northeastern University. I specialize in transforming complex datasets into actionable insights that influence strategy and create measurable business value.</p>
+            <p>My expertise spans the full data lifecycle—from ETL pipeline development and data warehousing to advanced analytics and compelling visualizations. I've delivered solutions that improved forecast accuracy by 15%, reduced reporting time by 40%, and saved hundreds of audit hours through intelligent automation.</p>
+            <p>Skilled in Python, SQL, Tableau, Power BI, and modern cloud technologies (AWS, Snowflake), I'm passionate about using data to solve real-world business challenges.</p>
+            
+            <div class="stats">
+                <a href="#project-autoconnect" class="stat-item">
+                    <div class="stat-icon">🚗</div>
+                    <h3>AutoConnect</h3>
+                    <p>Car Reselling Database</p>
+                </a>
+                <a href="#project-ecommerce" class="stat-item">
+                    <div class="stat-icon">📊</div>
+                    <h3>E-Commerce Analysis</h3>
+                    <p>RFM Customer Segmentation</p>
+                </a>
+                <a href="#project-stock" class="stat-item">
+                    <div class="stat-icon">📈</div>
+                    <h3>Stock Forecasting</h3>
+                    <p>ARIMA Time Series Model</p>
+                </a>
+                <a href="#project-flights" class="stat-item">
+                    <div class="stat-icon">✈️</div>
+                    <h3>Flights Dashboard</h3>
+                    <p>Power BI Holiday Analysis</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Financial Data Analyst Co-op</h3>
+                        <p class="company">Mimecast, USA</p>
+                    </div>
+                    <span class="date">Aug 2024 - Dec 2024</span>
+                </div>
+                <ul>
+                    <li>Delivered Tableau dashboards tracking 20+ KPIs across 4 product lines, improving forecast accuracy by 15% and supporting $500M+ ARR</li>
+                    <li>Cut reporting time by 40% through Snowflake mart optimization using SQL (CTEs, window functions, clustering, dbt)</li>
+                    <li>Eliminated repetitive backlog reporting by automating Jira workflows with dbt macros and Snowflake SQL</li>
+                    <li>Saved 20+ audit hours/month on $50M+ transactions through automated QA with Excel Power Query and SQL-based dbt validations</li>
+                    <li>Increased KPI reliability by reducing data errors by 25% using dbt tests, lineage, and SQL logic in Snowflake</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Data Analyst</h3>
+                        <p class="company">Northeastern University, Boston</p>
+                    </div>
+                    <span class="date">Oct 2023 - Aug 2024</span>
+                </div>
+                <ul>
+                    <li>Eliminated 90% of manual work by automating Snowflake schema ingestion into AWS ETL (S3, Glue, Lambda, Athena) with Redshift outputs</li>
+                    <li>Led a team of 3 to optimize ETL runtime by 30% in AWS Glue through partitioning and schema detection, scaling workflows to 1M+ monthly records</li>
+                    <li>Validated financial datasets in PostgreSQL and Alteryx across 100K+ transactions, reinforcing data accuracy for executive reporting</li>
+                    <li>Maintained 99.5% uptime with Lambda, Athena, and Redshift; delivered QuickSight KPI dashboards for 5+ client teams</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Data Analyst Intern</h3>
+                        <p class="company">Corizo, Bengaluru, India</p>
+                    </div>
+                    <span class="date">Jan 2023 - Jun 2023</span>
+                </div>
+                <ul>
+                    <li>Scaled preprocessing of historical and streaming stock data using PySpark on distributed storage (HDFS/S3), consolidating 100K+ records</li>
+                    <li>Engineered features and reconciled live + historical feeds with Python (Pandas, NumPy), improving forecasting reliability by 20%</li>
+                    <li>Implemented ARIMA models in Python on curated datasets, boosting prediction precision by 12%</li>
+                    <li>Translated complex statistical outputs into actionable insights through Looker dashboards for finance and strategy teams</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Data & ML Assistant</h3>
+                        <p class="company">Vellore Institute of Technology, India</p>
+                    </div>
+                    <span class="date">Jan 2022 - Dec 2022</span>
+                </div>
+                <ul>
+                    <li>Built a Snowflake SQL validation framework that resolved 60+ data issues across 10 financial tables, increasing accuracy on 1M+ records</li>
+                    <li>Developed Tableau dashboards surfacing KPI anomalies, reducing audit prep time by 35%</li>
+                    <li>Automated anomaly detection on 50K+ records with Excel Power Query, PivotTables, and VLOOKUP</li>
+                    <li>Scaled anomaly detection pipelines with Python (Pandas, NumPy) and PySpark on Hadoop, reducing processing time 40%</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card" id="project-autoconnect">
+                <div class="project-image">🚗</div>
+                <div class="project-content">
+                    <h3>AutoConnect: Streamlined Car Reselling Solutions</h3>
+                    <p class="tech">SQL | MongoDB | Neo4j | Python</p>
+                    <p>Directed a 3-member team to design a centralized database for vehicle purchases and sales. Utilized SQL, MongoDB, and Neo4j to capture and query 500+ customer, agent, and vehicle links, reducing lookup time by 30%. Combined SQL and Python to analyze sales trends, customer preferences, and inventory performance.</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+
+            <div class="project-card" id="project-ecommerce">
+                <div class="project-image">📊</div>
+                <div class="project-content">
+                    <h3>E-Commerce Transaction Analysis</h3>
+                    <p class="tech">Python | Pandas | Power BI | RFM Analysis</p>
+                    <p>Performed RFM analysis on an E-Commerce dataset, segmenting customers for retention and targeting strategies. Found 85% "At-Risk/Hibernating" vs. 15% "Loyal" customers, with loyal buyers driving 60% of CLV. Built Power BI dashboards to highlight cohort behavior and showed targeted retention could raise revenue 25%.</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+
+            <div class="project-card" id="project-stock">
+                <div class="project-image">📈</div>
+                <div class="project-content">
+                    <h3>Stock Forecasting with ARIMA</h3>
+                    <p class="tech">Python | PySpark | ARIMA | Looker</p>
+                    <p>Developed time series forecasting models using ARIMA on 100K+ stock market records. Improved prediction precision by 12% through feature engineering and data reconciliation. Created Looker dashboards to communicate statistical outputs to finance teams, reducing financial risk through data-driven insights.</p>
+                    <a href="#" class="project-link">View Details →</a>
+                </div>
+            </div>
+
+            <div class="project-card" id="project-flights">
+                <div class="project-image">✈️</div>
+                <div class="project-content">
+                    <h3>Flights and Public Holidays Dashboard</h3>
+                    <p class="tech">Power BI | Data Visualization | Calendar Heatmap</p>
+                    <p>Built an interactive Power BI dashboard analyzing U.S. flight ticket prices around major public holidays (pre-COVID). Visualized price fluctuations by airline, booking agency, and destination state. Included traveler volume map and calendar heatmap revealing that prices peak on holidays and drop immediately after, with states like Delaware showing consistently higher fares.</p>
+                    <a href="https://github.com/ashmita-code/powerbi-flights-holidays-dashboard" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Programming & Analytics</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Statistical Modeling</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Data Engineering & Databases</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">Snowflake</span>
+                    <span class="skill-tag">AWS (S3, Glue, Lambda, Athena)</span>
+                    <span class="skill-tag">dbt</span>
+                    <span class="skill-tag">PySpark</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Neo4j</span>
+                    <span class="skill-tag">Hadoop</span>
+                    <span class="skill-tag">Talend</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Visualization & BI Tools</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Looker</span>
+                    <span class="skill-tag">QuickSight</span>
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">Seaborn</span>
+                    <span class="skill-tag">Excel (Advanced)</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Tools & Technologies</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Jira</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Alteryx</span>
+                    <span class="skill-tag">Power Query</span>
+                    <span class="skill-tag">Google Sheets</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Let's Connect</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem; color: #475569;">I'm always interested in discussing data analytics opportunities, collaborating on projects, or simply connecting with fellow data enthusiasts.</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>Email:</strong><br>
+                <a href="mailto:ashmitapal2848@gmail.com">ashmitapal2848@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <strong>Phone:</strong><br>
+                <a href="tel:+18576547663">+1 (857) 654-7663</a>
+            </div>
+            <div class="contact-item">
+                <strong>Location:</strong><br>
+                Boston, MA 02130
+            </div>
+            <div class="contact-item">
+                <strong>LinkedIn:</strong><br>
+                <a href="https://www.linkedin.com/in/ashmita-pal" target="_blank">linkedin.com/in/ashmita-pal</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Ashmita Pal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
