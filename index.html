@@ -426,9 +426,19 @@
             padding: 2rem;
         }
         @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-right {
+                text-align: center;
+            }
+
             .profile-photo {
-                width: 140px;
-                height: 140px;
+                width: 200px;
+                height: 200px;
             }
             .hamburger {
                 display: flex;
@@ -510,12 +520,16 @@
     <section id="home" class="hero">
         <canvas id="particles-canvas"></canvas>
         <div class="hero-content">
-            <img src="profile.jpg" alt="Ashmita Pal" class="profile-photo">
-            <h1>Ashmita Pal</h1>
-            <p>Data Analyst | Analytics Engineer</p>
-            <p class="subtitle">Data whispers patterns — I turn them into insights</p>
-            <a href="#contact" class="cta-button">Get In Touch</a>
-            <a href="https://www.linkedin.com/in/ashmita-pal" class="cta-button secondary" target="_blank">LinkedIn</a>
+            <div class="hero-left">
+                <img src="profile.jpg" alt="Ashmita Pal" class="profile-photo">
+            </div>
+            <div class="hero-right">
+                <h1>Ashmita Pal</h1>
+                <p>Data Analyst | Analytics Engineer</p>
+                <p class="subtitle">Data whispers patterns — I turn them into insights</p>
+                <a href="#contact" class="cta-button">Get In Touch</a>
+                <a href="https://www.linkedin.com/in/ashmita-pal" class="cta-button secondary" target="_blank">LinkedIn</a>
+            </div>
         </div>
     </section>
     <section id="about" class="about">
@@ -661,4 +675,194 @@
         <div class="skills-container">
             <div class="skill-category">
                 <h3>Programming & Analytics</h3>
-                <div class="skills
+                <div class="skills-list">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Statistical Modeling</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Data Engineering & Databases</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">Snowflake</span>
+                    <span class="skill-tag">AWS (S3, Glue, Lambda, Athena)</span>
+                    <span class="skill-tag">dbt</span>
+                    <span class="skill-tag">PySpark</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Neo4j</span>
+                    <span class="skill-tag">Hadoop</span>
+                    <span class="skill-tag">Talend</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Jira</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Alteryx</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Visualization & BI Tools</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Looker</span>
+                    <span class="skill-tag">QuickSight</span>
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">Seaborn</span>
+                    <span class="skill-tag">Excel (Advanced)</span>
+                    <span class="skill-tag">Power Query</span>
+                    <span class="skill-tag">Google Sheets</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Let's Connect</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem; color: #475569;">I'm always interested in discussing data analytics opportunities, collaborating on projects, or simply connecting with fellow data enthusiasts.</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>Email:</strong><br>
+                <a href="mailto:ashmitapal2848@gmail.com">ashmitapal2848@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <strong>Phone:</strong><br>
+                <a href="tel:+18576547663">+1 (857) 654-7663</a>
+            </div>
+            <div class="contact-item">
+                <strong>Location:</strong><br>
+                Boston, MA 02130
+            </div>
+            <div class="contact-item">
+                <strong>LinkedIn:</strong><br>
+                <a href="https://www.linkedin.com/in/ashmita-pal" target="_blank">linkedin.com/in/ashmita-pal</a>
+            </div>
+        </div>
+    </section>
+    <a href="#home" class="back-to-top" id="backToTop">↑</a>
+    <footer>
+        <p>&copy; 2025 Ashmita Pal. All rights reserved.</p>
+    </footer>
+    <script>
+        // Particle Background
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let particles = [];
+        const particleCount = 80;
+        const connectionDistance = 150;
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = 2;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+                ctx.fill();
+            }
+        }
+        function init() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+        function connectParticles() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < connectionDistance) {
+                        const opacity = 1 - (distance / connectionDistance);
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.3})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            connectParticles();
+            requestAnimationFrame(animate);
+        }
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        });
+        init();
+        animate();
+        // 3D Tilt Effect for Project Cards
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        projectCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+        // Hamburger Menu
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>
