@@ -28,4 +28,185 @@
     .nav-links a { text-decoration:none; color:#333; font-weight:500; transition:color .3s; }
     .nav-links a:hover { color:#0e7490; }
     .hamburger { display:none; flex-direction:column; cursor:pointer; gap:5px; }
-    .hamburger span { width:25px; height:3px; background:#0e7490; transition:a
+    .hamburger span { width:25px; height:3px; background:#0e7490; transition:all .3s; }
+    .hamburger.active span:nth-child(1){ transform:rotate(45deg) translate(8px,8px); }
+    .hamburger.active span:nth-child(2){ opacity:0; }
+    .hamburger.active span:nth-child(3){ transform:rotate(-45deg) translate(7px,-7px); }
+
+    /* Hero */
+    .hero {
+      min-height:100vh; display:flex; align-items:center; justify-content:center;
+      background:linear-gradient(135deg,#164e63 0%,#0e7490 50%,#0891b2 100%);
+      color:#fff; padding:2rem 5%; position:relative; overflow:hidden;
+    }
+    #particles-canvas { position:absolute; inset:0; width:100%; height:100%; z-index:0; }
+    .hero-content{
+      position:relative; z-index:1; display:flex; align-items:center; justify-content:space-between;
+      gap:3rem; width:100%; max-width:1200px;
+    }
+    .hero-left{ flex:1; display:flex; flex-direction:column; justify-content:center; }
+    .hero-right{ flex:1; display:flex; justify-content:center; align-items:center; }
+
+    /* Avatar glow wrapper (safe, cross-browser) */
+    .avatar-glow{
+      width:280px; height:280px; border-radius:50%;
+      padding:8px;                         /* ring thickness */
+      background:conic-gradient(from 0deg at 50% 50%, #0e7490, #0891b2, #0e7490);
+      display:inline-flex; align-items:center; justify-content:center;
+      box-shadow:0 0 24px rgba(8,145,178,.35), 0 12px 40px rgba(0,0,0,.25);
+      position:relative;
+      animation:glowPulse 4s ease-in-out infinite;
+    }
+    /* soft outer aura */
+    .avatar-glow::before{
+      content:""; position:absolute; inset:-14px; border-radius:50%;
+      background:radial-gradient(60% 60% at 50% 50%, rgba(8,145,178,.25), rgba(8,145,178,0) 70%);
+      filter:blur(6px); z-index:-1;
+    }
+    /* respect reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .avatar-glow{ animation:none; }
+    }
+    @keyframes glowPulse{
+      0%,100%{ box-shadow:0 0 22px rgba(8,145,178,.30), 0 10px 30px rgba(0,0,0,.22); }
+      50%    { box-shadow:0 0 40px rgba(8,145,178,.55), 0 18px 48px rgba(0,0,0,.28); }
+    }
+
+    /* The actual image (kept clean) */
+    .profile-photo{
+      width:100%; height:100%; border-radius:50%;
+      object-fit:cover; display:block;
+      border:6px solid #fff;               /* crisp inner white ring */
+      background:#fff;                     /* fallback behind img */
+    }
+
+    .hero h1{ font-size:4rem; margin-bottom:1rem; }
+    .hero p{ font-size:1.5rem; margin-bottom:.5rem; opacity:.95; }
+    .hero .subtitle{ font-size:1.1rem; margin-bottom:2rem; opacity:.85; }
+    .cta-button{
+      display:inline-block; padding:1rem 2.5rem; background:#fff; color:#0e7490;
+      text-decoration:none; border-radius:50px; font-weight:600;
+      transition:transform .3s, box-shadow .3s; margin:0 .5rem;
+    }
+    .cta-button:hover{ transform:translateY(-3px); box-shadow:0 10px 30px rgba(0,0,0,.3); }
+    .cta-button.secondary{ background:transparent; color:#fff; border:2px solid #fff; }
+
+    section{ padding:5rem 10%; }
+    h2{ font-size:2.5rem; margin-bottom:3rem; text-align:center; color:#164e63; }
+
+    /* Mobile */
+    @media (max-width:768px){
+      .hero-content{ flex-direction:column; text-align:center; }
+      .hero-left{ margin-top:2rem; }
+      .avatar-glow{ width:200px; height:200px; padding:6px; }
+      .hamburger{ display:flex; }
+      .nav-links{
+        position:fixed; top:80px; left:-100%; width:100%; background:#fff;
+        flex-direction:column; padding:2rem; gap:1.5rem; box-shadow:0 5px 20px rgba(0,0,0,.1);
+        transition:left .3s;
+      }
+      .nav-links.active{ left:0; }
+      .hero h1{ font-size:2.5rem; }
+      .hero p{ font-size:1.2rem; }
+      .hero .subtitle{ font-size:1rem; }
+      .cta-button{ padding:.8rem 2rem; font-size:.9rem; margin:.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Ashmita Pal</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" onclick="closeMenu()">Home</a></li>
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+      <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+      <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <canvas id="particles-canvas"></canvas>
+    <div class="hero-content">
+      <!-- Text left -->
+      <div class="hero-left">
+        <h1>Ashmita Pal</h1>
+        <p>Data Analyst | Analytics Engineer</p>
+        <p class="subtitle">Data whispers patterns — I turn them into insights</p>
+        <div>
+          <a href="#contact" class="cta-button">Get In Touch</a>
+          <a href="https://www.linkedin.com/in/ashmita-pal" class="cta-button secondary" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <!-- Image right (wrapped for glow) -->
+      <div class="hero-right">
+        <div class="avatar-glow">
+          <img src="profile.jpg" alt="Ashmita Pal" class="profile-photo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Your other sections (About, Experience, Projects, Skills, Contact, Footer) go here -->
+
+  <script>
+    // Particle Background
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    function sizeCanvas(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    sizeCanvas();
+    let particles = [];
+    const particleCount = 80, connectionDistance = 150;
+    class Particle {
+      constructor(){
+        this.x = Math.random()*canvas.width; this.y = Math.random()*canvas.height;
+        this.vx = (Math.random()-0.5)*0.5; this.vy = (Math.random()-0.5)*0.5; this.radius = 2;
+      }
+      update(){ this.x+=this.vx; this.y+=this.vy;
+        if(this.x<0||this.x>canvas.width) this.vx*=-1;
+        if(this.y<0||this.y>canvas.height) this.vy*=-1;
+      }
+      draw(){ ctx.beginPath(); ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);
+        ctx.fillStyle='rgba(255,255,255,0.7)'; ctx.fill(); }
+    }
+    function init(){ particles=[]; for(let i=0;i<particleCount;i++) particles.push(new Particle()); }
+    function connectParticles(){
+      for(let i=0;i<particles.length;i++){
+        for(let j=i+1;j<particles.length;j++){
+          const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y;
+          const dist=Math.hypot(dx,dy);
+          if(dist<connectionDistance){
+            const o=1-(dist/connectionDistance);
+            ctx.beginPath(); ctx.strokeStyle=`rgba(255,255,255,${o*0.3})`; ctx.lineWidth=1;
+            ctx.moveTo(particles[i].x,particles[i].y); ctx.lineTo(particles[j].x,particles[j].y); ctx.stroke();
+          }
+        }
+      }
+    }
+    function animate(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      particles.forEach(p=>{ p.update(); p.draw(); }); connectParticles();
+      requestAnimationFrame(animate);
+    }
+    window.addEventListener('resize', ()=>{ sizeCanvas(); init(); });
+    init(); animate();
+
+    // Menu
+    function toggleMenu(){
+      const navLinks=document.getElementById('navLinks');
+      const hamburger=document.querySelector('.hamburger');
+      navLinks.classList.toggle('active'); hamburger.classList.toggle('active');
+    }
+    function closeMenu(){
+      const navLinks=document.getElementById('navLinks');
+      const hamburger=document.querySelector('.hamburger');
+      navLinks.classList.remove('active'); hamburger.classList.remove('active');
+    }
+  </script>
+</body>
+</html>
