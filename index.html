@@ -47,34 +47,42 @@
     .hero-left{ flex:1; display:flex; flex-direction:column; justify-content:center; }
     .hero-right{ flex:1; display:flex; justify-content:center; align-items:center; }
 
-    /* Avatar glow wrapper */
-    .avatar-glow{
+    /* ===== Avatar with animated gradient glow ===== */
+    /* Outer ring that spins the gradient (teal -> blue) */
+    .avatar-outer{
       width:340px; height:340px; border-radius:50%;
-      padding:10px; /* glow thickness */
+      padding:10px;                                   /* ring thickness */
       background:conic-gradient(from 0deg at 50% 50%, #0e7490, #0891b2, #0e7490);
       display:inline-flex; align-items:center; justify-content:center;
       box-shadow:0 0 28px rgba(8,145,178,.35), 0 16px 48px rgba(0,0,0,.25);
-      position:relative;
-      animation:glowPulse 4s ease-in-out infinite;
+      position:relative; isolation:isolate;
+      animation:spin 14s linear infinite, ringPulse 4s ease-in-out infinite;
+      will-change:transform, box-shadow;
     }
-    .avatar-glow::before{
+    /* Soft outer aura */
+    .avatar-outer::before{
       content:""; position:absolute; inset:-16px; border-radius:50%;
       background:radial-gradient(60% 60% at 50% 50%, rgba(8,145,178,.25), rgba(8,145,178,0) 70%);
       filter:blur(6px); z-index:-1;
     }
-    @media (prefers-reduced-motion: reduce){
-      .avatar-glow{ animation:none; }
+    /* Inner holder to create a crisp white ring around the photo */
+    .avatar-glow{
+      width:100%; height:100%; border-radius:50%;
+      background:#fff; padding:6px; display:flex; align-items:center; justify-content:center;
+      box-shadow:0 0 22px rgba(14,116,144,.25);
     }
-    @keyframes glowPulse{
+    .profile-photo{
+      width:100%; height:100%; border-radius:50%;
+      object-fit:cover; display:block; background:#fff;
+    }
+
+    @keyframes spin { to { transform:rotate(360deg); } }
+    @keyframes ringPulse{
       0%,100%{ box-shadow:0 0 26px rgba(8,145,178,.30), 0 12px 36px rgba(0,0,0,.22); }
       50%    { box-shadow:0 0 44px rgba(8,145,178,.55), 0 20px 54px rgba(0,0,0,.28); }
     }
-
-    .profile-photo{
-      width:100%; height:100%; border-radius:50%;
-      object-fit:cover; display:block;
-      border:6px solid #fff;
-      background:#fff;
+    @media (prefers-reduced-motion: reduce){
+      .avatar-outer{ animation:none; }
     }
 
     .hero h1{ font-size:4rem; margin-bottom:1rem; }
@@ -95,7 +103,7 @@
     @media (max-width:768px){
       .hero-content{ flex-direction:column; text-align:center; }
       .hero-left{ margin-top:2rem; }
-      .avatar-glow{ width:220px; height:220px; padding:8px; }
+      .avatar-outer{ width:220px; height:220px; padding:8px; }
       .hamburger{ display:flex; }
       .nav-links{
         position:fixed; top:80px; left:-100%; width:100%; background:#fff;
@@ -137,19 +145,21 @@
         <p class="subtitle">Data whispers patterns — I turn them into insights</p>
         <div>
           <a href="#contact" class="cta-button">Get In Touch</a>
-          <a href="https://www.linkedin.com/in/ashmita-pal" class="cta-button secondary" target="_blank">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/ashmita-pal" class="cta-button secondary" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
-      <!-- Image right -->
+      <!-- Image right with animated glow -->
       <div class="hero-right">
-        <div class="avatar-glow">
-          <img src="profile.jpg" alt="Ashmita Pal" class="profile-photo">
+        <div class="avatar-outer" aria-hidden="true">
+          <div class="avatar-glow">
+            <img src="profile.jpg" alt="Ashmita Pal" class="profile-photo">
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Other sections (About, Experience, Projects, Skills, Contact, Footer) go here -->
+  <!-- ===== Add your About / Experience / Projects / Skills / Contact / Footer sections here ===== -->
 
   <script>
     // Particle Background
