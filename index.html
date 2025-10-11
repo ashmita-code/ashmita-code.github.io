@@ -511,17 +511,15 @@
         window.addEventListener('resize', ()=>{ canvas.width=window.innerWidth; canvas.height=window.innerHeight; init(); });
         init(); animate();
 
-        const projectCards=document.querySelectorAll('.project-card');
-        projectCards.forEach(card=>{
-            card.addEventListener('mousemove', e=>{
-                const rect=card.getBoundingClientRect();
-                const x=e.clientX-rect.left, y=e.clientY-rect.top;
-                const cx=rect.width/2, cy=rect.height/2;
-                const rx=(y-cy)/10, ry=(cx-x)/10;
-                card.style.transform=`perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-10px)`;
-            });
-            card.addEventListener('mouseleave', ()=>{ card.style.transform='perspective(1000px) rotateX(0) rotateY(0) translateY(0)'; });
-        });
+        const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px)';
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+    });
+});
 
         function toggleMenu(){ const n=document.getElementById('navLinks'); const h=document.querySelector('.hamburger');
             n.classList.toggle('active'); h.classList.toggle('active'); }
