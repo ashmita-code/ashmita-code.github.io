@@ -116,13 +116,29 @@
 
         section { padding: 5rem 10%; }
         h2 { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; color: #164e63; }
-
-        /* ABOUT */
         .about { background: #ecfeff; }
         .about-content { max-width: 900px; margin: 0 auto; font-size: 1.1rem; color: #334155; line-height: 1.8; }
-        .about-content p { margin-bottom: 1rem; text-align: justify; }
+        .about-content p { margin-bottom: 1rem; }
+        .about-content p:first-child { text-align: justify; }
 
-        /* EXPERIENCE */
+        .stats {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem; margin-top: 3rem;
+        }
+        .stat-item {
+            text-align: center; padding: 2rem 1.5rem; background: white; border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(14,116,144,0.15);
+            transition: transform .3s, box-shadow .3s, background .3s;
+            cursor: pointer; text-decoration: none; display: block;
+        }
+        .stat-item:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(14,116,144,.3);
+            background: linear-gradient(135deg,#0e7490 0%, #0891b2 100%); }
+        .stat-item:hover h3, .stat-item:hover p { color: #fff; }
+        .stat-icon { font-size: 3rem; margin-bottom: 1rem; transition: transform .3s; }
+        .stat-item:hover .stat-icon { transform: scale(1.2); }
+        .stat-item h3 { font-size: 1.3rem; color: #0e7490; margin-bottom: .5rem; font-weight: 700; }
+        .stat-item p { color: #64748b; font-size: .9rem; }
+
         .experience-timeline { max-width: 1000px; margin: 0 auto; }
         .experience-item {
             background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem;
@@ -137,8 +153,87 @@
         .experience-item ul { margin-left: 1.5rem; color: #475569; }
         .experience-item li { margin-bottom: .5rem; }
 
-        /* PROJECTS, SKILLS, CONTACT, FOOTER, MOBILE same as before */
-        /* (Omitted here for brevity – they’re unchanged from your original version) */
+        .projects { background: #ecfeff; }
+        .projects-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 2rem; max-width: 1200px; margin: 0 auto;
+        }
+        .project-card {
+            background: white; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,.1); transition: transform .3s, box-shadow .3s;
+            transform-style: preserve-3d; perspective: 1000px;
+        }
+        .project-card:hover { box-shadow: 0 15px 40px rgba(14,116,144,.25); }
+        .project-image {
+            width: 100%; height: 200px;
+            background: linear-gradient(135deg, #164e63 0%, #0e7490 50%, #0891b2 100%);
+            display: flex; align-items: center; justify-content: center; font-size: 3rem;
+        }
+        .project-content { padding: 1.5rem; }
+        .project-content h3 { margin-bottom: .5rem; color: #164e63; }
+        .project-content .tech { color: #0e7490; font-size: .9rem; margin-bottom: 1rem; font-weight: 600; }
+        .project-content p { color: #475569; margin-bottom: 1rem; line-height: 1.6; }
+        .project-link { color: #0e7490; text-decoration: none; font-weight: 600; transition: color .3s; }
+        .project-link:hover { color: #0891b2; }
+
+        .skills-container { max-width: 1000px; margin: 0 auto; }
+        .skill-category { margin-bottom: 3rem; }
+        .skill-category h3 {
+            color: #164e63; font-size: 1.3rem; margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 2px solid #0e7490;
+        }
+        .skills-list { display: flex; flex-wrap: wrap; gap: 1rem; }
+        .skill-tag {
+            background: white; padding: .7rem 1.5rem; border-radius: 25px; color: #164e63; font-weight: 500;
+            box-shadow: 0 3px 10px rgba(14,116,144,.2); transition: transform .3s, box-shadow .3s;
+        }
+        .skill-tag:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(14,116,144,.3); background: #0e7490; color: #fff; }
+
+        .contact { background: #ecfeff; text-align: center; }
+        .contact-info {
+            display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem;
+        }
+        .contact-item { font-size: 1.1rem; color: #475569; }
+        .contact-item strong { color: #164e63; }
+        .contact-item a { color: #0e7490; text-decoration: none; transition: color .3s; font-weight: 600; }
+        .contact-item a:hover { color: #0891b2; }
+
+        .back-to-top {
+            position: fixed; bottom: 30px; right: 30px; background: #0e7490; color: #fff;
+            width: 50px; height: 50px; border-radius: 50%; display:flex; align-items:center; justify-content:center;
+            font-size: 1.5rem; text-decoration: none; box-shadow: 0 5px 15px rgba(14,116,144,.3);
+            opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s; z-index: 999;
+        }
+        .back-to-top.visible { opacity: 1; pointer-events: auto; }
+        .back-to-top:hover { transform: translateY(-5px); background: #164e63; }
+
+        footer { background: #164e63; color: #fff; text-align: center; padding: 2rem; }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .hero-content { flex-direction: column; text-align: center; }
+            .hero-left { margin-top: 2rem; }
+            .avatar-outer { width: 240px; height: 240px; padding: 8px; }
+
+            .hamburger { display: flex; }
+            .nav-links {
+                position: fixed; top: 80px; left: -100%; width: 100%; background: #fff;
+                flex-direction: column; padding: 2rem; gap: 1.5rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                transition: left 0.3s;
+            }
+            .nav-links.active { left: 0; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.2rem; }
+            .hero .subtitle { font-size: 1rem; }
+            .cta-button { padding: 0.8rem 2rem; font-size: 0.9rem; margin: 0.3rem; }
+
+            section { padding: 3rem 5%; }
+            h2 { font-size: 2rem; }
+            .stats { grid-template-columns: 1fr; }
+            .experience-header { flex-direction: column; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .contact-info { flex-direction: column; gap: 1.5rem; }
+            .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+        }
     </style>
 </head>
 <body>
@@ -185,6 +280,29 @@
             <p>Data Analyst with a Master’s in Data Analytics Engineering. I specialize in transforming complex datasets into actionable insights that influence strategy and create measurable business value.</p>
             <p>My expertise spans the full data lifecycle—from ETL pipeline development and data warehousing to advanced analytics and compelling visualizations. I've delivered solutions that improved forecast accuracy by 15%, reduced reporting time by 40%, and saved hundreds of audit hours through intelligent automation.</p>
             <p>Skilled in Python, SQL, Tableau, Power BI, and modern cloud technologies (AWS, Snowflake), I'm passionate about using data to solve real-world business challenges.</p>
+
+            <div class="stats">
+                <a href="#project-autoconnect" class="stat-item">
+                    <div class="stat-icon">🚗</div>
+                    <h3>AutoConnect</h3>
+                    <p>Car Reselling Database</p>
+                </a>
+                <a href="#project-ecommerce" class="stat-item">
+                    <div class="stat-icon">📊</div>
+                    <h3>E-Commerce Analysis</h3>
+                    <p>RFM Customer Segmentation</p>
+                </a>
+                <a href="#project-diabetes" class="stat-item">
+                    <div class="stat-icon">🏥</div>
+                    <h3>Diabetes Prediction</h3>
+                    <p>Machine Learning Analysis</p>
+                </a>
+                <a href="#project-flights" class="stat-item">
+                    <div class="stat-icon">✈️</div>
+                    <h3>Flights Dashboard</h3>
+                    <p>Power BI Holiday Analysis</p>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -207,7 +325,6 @@
                     <li>Improved KPI accuracy by 25% through lineage validation and automated error tracking.</li>
                 </ul>
             </div>
-
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
@@ -223,7 +340,6 @@
                     <li>Validated multi-source datasets in PostgreSQL and Alteryx across 100K+ transactions, ensuring 99.5% data reliability for executive insights.</li>
                 </ul>
             </div>
-
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
@@ -239,7 +355,6 @@
                     <li>Partnered with supply chain and finance teams to operationalize forecasts, cutting excess inventory by 10% and boosting fulfillment efficiency.</li>
                 </ul>
             </div>
-
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
@@ -259,6 +374,164 @@
         </div>
     </section>
 
-    <!-- Projects, Skills, Contact, and Scripts remain unchanged from your version -->
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card" id="project-autoconnect">
+                <div class="project-image">🚗</div>
+                <div class="project-content">
+                    <h3>AutoConnect: Streamlined Car Reselling Solutions</h3>
+                    <p class="tech">SQL | MongoDB | Neo4j | Python</p>
+                    <p>Directed a 3-member team to design a centralized database for vehicle purchases and sales. Utilized SQL, MongoDB, and Neo4j to capture and query 500+ customer, agent, and vehicle links, reducing lookup time by 30%. Combined SQL and Python to analyze sales trends, customer preferences, and inventory performance.</p>
+                    <a href="https://github.com/ashmita-code/autoconnect" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+            <div class="project-card" id="project-ecommerce">
+                <div class="project-image">📊</div>
+                <div class="project-content">
+                    <h3>E-Commerce Transaction Analysis</h3>
+                    <p class="tech">Python | Pandas | Power BI | RFM Analysis</p>
+                    <p>Performed RFM analysis on an E-Commerce dataset, segmenting customers for retention and targeting strategies. Found 85% "At-Risk/Hibernating" vs. 15% "Loyal" customers, with loyal buyers driving 60% of CLV. Built Power BI dashboards to highlight cohort behavior and showed targeted retention could raise revenue 25%.</p>
+                    <a href="https://github.com/ashmita-code/ecommerce-analysis" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+            <div class="project-card" id="project-diabetes">
+                <div class="project-image">🏥</div>
+                <div class="project-content">
+                    <h3>Diabetes Analysis and Prediction</h3>
+                    <p class="tech">Python | Machine Learning | Data Analysis</p>
+                    <p>Developed machine learning models to predict diabetes outcomes using patient health data. Implemented classification algorithms to identify high-risk patients and analyzed key health indicators. Created data visualizations to communicate findings and support healthcare decision-making with predictive insights.</p>
+                    <a href="https://github.com/ashmita-code/diabetes-analysis-and-prediction" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+            <div class="project-card" id="project-flights">
+                <div class="project-image">✈️</div>
+                <div class="project-content">
+                    <h3>Flights and Public Holidays Dashboard</h3>
+                    <p class="tech">Power BI | Data Visualization | Calendar Heatmap</p>
+                    <p>Built an interactive Power BI dashboard analyzing U.S. flight ticket prices around major public holidays (pre-COVID). Visualized price fluctuations by airline, booking agency, and destination state. Included traveler volume map and calendar heatmap revealing that prices peak on holidays and drop immediately after, with states like Delaware showing consistently higher fares.</p>
+                    <a href="https://github.com/ashmita-code/powerbi-flights-holidays-dashboard" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Programming & Analytics</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">R</span>
+                    <span class="skill-tag">C++</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Statistical Modeling</span><span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Data Engineering & Databases</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">Snowflake</span><span class="skill-tag">AWS (S3, Glue, Lambda, Athena)</span>
+                    <span class="skill-tag">dbt</span><span class="skill-tag">PySpark</span><span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Neo4j</span>
+                    <span class="skill-tag">Hadoop</span><span class="skill-tag">Talend</span><span class="skill-tag">Git</span>
+                    <span class="skill-tag">Jira</span><span class="skill-tag">Linux</span><span class="skill-tag">Alteryx</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Visualization & BI Tools</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">Tableau</span><span class="skill-tag">Power BI</span><span class="skill-tag">Looker</span>
+                    <span class="skill-tag">QuickSight</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span>
+                    <span class="skill-tag">Excel (Advanced)</span><span class="skill-tag">Power Query</span><span class="skill-tag">Google Sheets</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Let's Connect</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem; color: #475569;">I'm always interested in discussing data analytics opportunities, collaborating on projects, or simply connecting with fellow data enthusiasts.</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>Email:</strong><br>
+                <a href="mailto:ashmitapal2848@gmail.com">ashmitapal2848@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <strong>Phone:</strong><br>
+                <a href="tel:+18576547663">+1 (857) 654-7663</a>
+            </div>
+            <div class="contact-item">
+                <strong>Location:</strong><br>
+                Boston, MA 02130
+            </div>
+            <div class="contact-item">
+                <strong>LinkedIn:</strong><br>
+                <a href="https://www.linkedin.com/in/ashmita-pal" target="_blank">linkedin.com/in/ashmita-pal</a>
+            </div>
+        </div>
+    </section>
+
+    <a href="#home" class="back-to-top" id="backToTop">↑</a>
+    <footer><p>&copy; 2025 Ashmita Pal. All rights reserved.</p></footer>
+
+    <script>
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        let particles = []; const particleCount = 80; const connectionDistance = 150;
+        class Particle {
+            constructor(){ this.x=Math.random()*canvas.width; this.y=Math.random()*canvas.height;
+                this.vx=(Math.random()-0.5)*0.5; this.vy=(Math.random()-0.5)*0.5; this.radius=2; }
+            update(){ this.x+=this.vx; this.y+=this.vy;
+                if(this.x<0||this.x>canvas.width) this.vx*=-1;
+                if(this.y<0||this.y>canvas.height) this.vy*=-1; }
+            draw(){ ctx.beginPath(); ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);
+                ctx.fillStyle='rgba(255,255,255,0.7)'; ctx.fill(); }
+        }
+        function init(){ particles=[]; for(let i=0;i<particleCount;i++) particles.push(new Particle()); }
+        function connectParticles(){
+            for(let i=0;i<particles.length;i++){
+                for(let j=i+1;j<particles.length;j++){
+                    const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y;
+                    const distance=Math.sqrt(dx*dx+dy*dy);
+                    if(distance<connectionDistance){
+                        const opacity=1-(distance/connectionDistance);
+                        ctx.beginPath(); ctx.strokeStyle=`rgba(255,255,255,${opacity*0.3})`; ctx.lineWidth=1;
+                        ctx.moveTo(particles[i].x,particles[i].y); ctx.lineTo(particles[j].x,particles[j].y); ctx.stroke();
+                    }
+                }
+            }
+        }
+        function animate(){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            particles.forEach(p=>{ p.update(); p.draw(); }); connectParticles();
+            requestAnimationFrame(animate);
+        }
+        window.addEventListener('resize', ()=>{ canvas.width=window.innerWidth; canvas.height=window.innerHeight; init(); });
+        init(); animate();
+
+        const projectCards=document.querySelectorAll('.project-card');
+        projectCards.forEach(card=>{
+            card.addEventListener('mousemove', e=>{
+                const rect=card.getBoundingClientRect();
+                const x=e.clientX-rect.left, y=e.clientY-rect.top;
+                const cx=rect.width/2, cy=rect.height/2;
+                const rx=(y-cy)/10, ry=(cx-x)/10;
+                card.style.transform=`perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-10px)`;
+            });
+            card.addEventListener('mouseleave', ()=>{ card.style.transform='perspective(1000px) rotateX(0) rotateY(0) translateY(0)'; });
+        });
+
+        function toggleMenu(){ const n=document.getElementById('navLinks'); const h=document.querySelector('.hamburger');
+            n.classList.toggle('active'); h.classList.toggle('active'); }
+        function closeMenu(){ const n=document.getElementById('navLinks'); const h=document.querySelector('.hamburger');
+            n.classList.remove('active'); h.classList.remove('active'); }
+
+        window.addEventListener('scroll', ()=>{
+            const b=document.getElementById('backToTop');
+            if(window.pageYOffset>300){ b.classList.add('visible'); } else { b.classList.remove('visible'); }
+        });
+    </script>
 </body>
 </html>
