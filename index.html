@@ -142,7 +142,7 @@
         .stat-item h3 { font-size: 1.3rem; color: #0e7490; margin-bottom: .5rem; font-weight: 700; }
         .stat-item p { color: #64748b; font-size: .9rem; }
 
-        /* NEW: Profiles strip (Option 2) */
+        /* Profiles strip */
         .profiles {
             background: #ffffff;
             padding-top: 3rem;
@@ -153,7 +153,7 @@
             max-width: 1000px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
         }
         .profile-card{
@@ -302,6 +302,7 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="#home" onclick="closeMenu()">Home</a></li>
             <li><a href="#about" onclick="closeMenu()">About</a></li>
+            <li><a href="#profiles" onclick="closeMenu()">Profiles</a></li>
             <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
             <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
             <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
@@ -363,7 +364,6 @@
         </div>
     </section>
 
-    <!-- NEW: Option 2 section -->
     <section class="profiles" id="profiles">
         <h2>Profiles &amp; Certifications</h2>
         <div class="profiles-grid">
@@ -376,11 +376,6 @@
                 <span class="profile-icon">🧠</span>
                 <div class="profile-title">HackerRank</div>
                 <div class="profile-sub">Coding practice &amp; badges</div>
-            </a>
-            <a class="profile-card" href="https://leetcode.com/progress/" target="_blank">
-                <span class="profile-icon">⚡</span>
-                <div class="profile-title">LeetCode</div>
-                <div class="profile-sub">Problem-solving progress</div>
             </a>
             <a class="profile-card" href="https://www.credly.com/badges/6b656032-3ccd-4bb0-aa39-48c8b2175537/public_url" target="_blank">
                 <span class="profile-icon">🏅</span>
@@ -562,10 +557,6 @@
             <div class="contact-item">
                 <strong>HackerRank:</strong><br>
                 <a href="https://www.hackerrank.com/profile/ashmitapal2848" target="_blank">hackerrank.com/profile/ashmitapal2848</a>
-            </div>
-            <div class="contact-item">
-                <strong>LeetCode:</strong><br>
-                <a href="https://leetcode.com/progress/" target="_blank">leetcode.com/progress</a>
             </div>
             <div class="contact-item">
                 <strong>Tableau Certificate:</strong><br>
