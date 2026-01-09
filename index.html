@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +38,7 @@
         .nav-links { display: flex; gap: 2rem; list-style: none; }
         .nav-links a {
             text-decoration: none;
-            color: #164e63; /* blue shade */
+            color: #164e63;
             font-weight: 600;
             transition: color 0.3s;
         }
@@ -143,6 +142,56 @@
         .stat-item h3 { font-size: 1.3rem; color: #0e7490; margin-bottom: .5rem; font-weight: 700; }
         .stat-item p { color: #64748b; font-size: .9rem; }
 
+        /* NEW: Profiles strip (Option 2) */
+        .profiles {
+            background: #ffffff;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        .profiles h2 { margin-bottom: 2rem; }
+        .profiles-grid{
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        .profile-card{
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.5rem 1.25rem;
+            box-shadow: 0 8px 22px rgba(14,116,144,0.12);
+            border: 1px solid rgba(14,116,144,0.10);
+            text-decoration: none;
+            transition: transform .25s, box-shadow .25s, background .25s;
+            display: block;
+        }
+        .profile-card:hover{
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(14,116,144,0.20);
+            background: linear-gradient(135deg,#0e7490 0%, #0891b2 100%);
+        }
+        .profile-card:hover .profile-title,
+        .profile-card:hover .profile-sub { color:#fff; }
+        .profile-icon{
+            font-size: 2.2rem;
+            margin-bottom: .75rem;
+            display: inline-block;
+            transition: transform .25s;
+        }
+        .profile-card:hover .profile-icon{ transform: scale(1.12); }
+        .profile-title{
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #164e63;
+            margin-bottom: .25rem;
+        }
+        .profile-sub{
+            font-size: .9rem;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
         .experience-timeline { max-width: 1000px; margin: 0 auto; }
         .experience-item {
             background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem;
@@ -237,6 +286,8 @@
             .projects-grid { grid-template-columns: 1fr; }
             .contact-info { flex-direction: column; gap: 1.5rem; }
             .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+
+            .profiles-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -309,6 +360,33 @@
                     <p>Power BI Holiday Analysis</p>
                 </a>
             </div>
+        </div>
+    </section>
+
+    <!-- NEW: Option 2 section -->
+    <section class="profiles" id="profiles">
+        <h2>Profiles &amp; Certifications</h2>
+        <div class="profiles-grid">
+            <a class="profile-card" href="https://github.com/ashmita-code" target="_blank">
+                <span class="profile-icon">💻</span>
+                <div class="profile-title">GitHub</div>
+                <div class="profile-sub">Projects &amp; repositories</div>
+            </a>
+            <a class="profile-card" href="https://www.hackerrank.com/profile/ashmitapal2848" target="_blank">
+                <span class="profile-icon">🧠</span>
+                <div class="profile-title">HackerRank</div>
+                <div class="profile-sub">Coding practice &amp; badges</div>
+            </a>
+            <a class="profile-card" href="https://leetcode.com/progress/" target="_blank">
+                <span class="profile-icon">⚡</span>
+                <div class="profile-title">LeetCode</div>
+                <div class="profile-sub">Problem-solving progress</div>
+            </a>
+            <a class="profile-card" href="https://www.credly.com/badges/6b656032-3ccd-4bb0-aa39-48c8b2175537/public_url" target="_blank">
+                <span class="profile-icon">🏅</span>
+                <div class="profile-title">Tableau Certificate</div>
+                <div class="profile-sub">View credential on Credly</div>
+            </a>
         </div>
     </section>
 
