@@ -192,6 +192,108 @@
             line-height: 1.4;
         }
 
+        /* FUN FACTS */
+        .fun-facts { background: #f0f9ff; }
+        .fun-facts h2 { color: #164e63; }
+        .sql-block {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(14,116,144,0.10);
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .sql-topbar {
+            background: #f1f5f9;
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .sql-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .sql-dot.red { background: #ef4444; }
+        .sql-dot.yellow { background: #eab308; }
+        .sql-dot.green { background: #22c55e; }
+        .sql-filename { color: #94a3b8; font-size: 0.8rem; margin-left: 0.5rem; }
+        .sql-query-block {
+            padding: 1.25rem 1.5rem;
+            font-size: 0.9rem;
+            line-height: 1.9;
+            color: #475569;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .sql-kw { color: #0e7490; font-weight: 700; }
+        .sql-table-name { color: #0891b2; }
+        .sql-btn-row { display: flex; gap: 10px; margin: 1rem 1.25rem; }
+        .sql-run-btn {
+            display: flex; align-items: center; gap: 8px;
+            background: #0e7490; color: #ffffff; border: none; border-radius: 8px;
+            padding: 10px 20px; font-family: 'Courier New', monospace; font-size: 13px;
+            font-weight: 700; cursor: pointer; transition: background 0.2s, transform 0.1s;
+        }
+        .sql-run-btn:hover { background: #0891b2; }
+        .sql-run-btn:active { transform: scale(0.97); }
+        .sql-run-btn:disabled { background: #e2e8f0; color: #94a3b8; cursor: not-allowed; }
+        .sql-reset-btn {
+            display: none; align-items: center; gap: 6px;
+            background: transparent; color: #64748b; border: 1px solid #cbd5e1; border-radius: 8px;
+            padding: 10px 16px; font-family: 'Courier New', monospace; font-size: 13px;
+            cursor: pointer; transition: background 0.2s, color 0.2s;
+        }
+        .sql-reset-btn:hover { background: #f1f5f9; color: #334155; }
+        .sql-spinner {
+            width: 14px; height: 14px; border: 2px solid #ffffff;
+            border-top-color: transparent; border-radius: 50%;
+            animation: sqlSpin 0.6s linear infinite; display: none;
+        }
+        @keyframes sqlSpin { to { transform: rotate(360deg); } }
+        .sql-status { font-size: 12px; color: #94a3b8; padding: 0 1.25rem 0.75rem; min-height: 18px; }
+        .sql-results {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        .sql-results thead tr { background: #f1f5f9; }
+        .sql-results thead th {
+            color: #0e7490;
+            padding: 10px 16px;
+            text-align: left;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            border-right: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .sql-results thead th:last-child { border-right: none; }
+        .sql-results tbody tr {
+            border-bottom: 1px solid #f1f5f9;
+            opacity: 0; transform: translateY(6px);
+            transition: opacity 0.25s, transform 0.25s, background 0.15s;
+        }
+        .sql-results tbody tr.sql-row-visible { opacity: 1; transform: translateY(0); }
+        .sql-results tbody tr:hover { background: #f0f9ff; }
+        .sql-results tbody td {
+            padding: 10px 16px;
+            border-right: 1px solid #f1f5f9;
+            vertical-align: middle;
+        }
+        .sql-results tbody td:last-child { border-right: none; }
+        .td-id { color: #94a3b8; }
+        .td-cat { color: #0e7490; font-weight: 600; }
+        .td-val { color: #334155; }
+        .sql-footer {
+            padding: 0.75rem 1.5rem;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .sql-footer span { color: #0e7490; font-weight: 600; }
+
         .experience-timeline { max-width: 1000px; margin: 0 auto; }
         .experience-item {
             background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem;
@@ -266,7 +368,6 @@
             .hero-content { flex-direction: column; text-align: center; }
             .hero-left { margin-top: 2rem; }
             .avatar-outer { width: 240px; height: 240px; padding: 8px; }
-
             .hamburger { display: flex; }
             .nav-links {
                 position: fixed; top: 80px; left: -100%; width: 100%; background: #fff;
@@ -278,7 +379,6 @@
             .hero p { font-size: 1.2rem; }
             .hero .subtitle { font-size: 1rem; }
             .cta-button { padding: 0.8rem 2rem; font-size: 0.9rem; margin: 0.3rem; }
-
             section { padding: 3rem 5%; }
             h2 { font-size: 2rem; }
             .stats { grid-template-columns: 1fr; }
@@ -286,22 +386,22 @@
             .projects-grid { grid-template-columns: 1fr; }
             .contact-info { flex-direction: column; gap: 1.5rem; }
             .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
-
             .profiles-grid { grid-template-columns: 1fr; }
+            .sql-results { font-size: 0.75rem; }
+            .sql-results thead th, .sql-results tbody td { padding: 8px 10px; }
         }
     </style>
 </head>
 <body>
     <nav>
         <div class="logo">Ashmita Pal</div>
-        <!-- Optional Resume button: uncomment and add resume.pdf in the same folder -->
-        <!-- <a href="resume.pdf" class="cta-button" style="margin-left:auto;margin-right:1rem;">Download Résumé</a> -->
         <div class="hamburger" onclick="toggleMenu()">
             <span></span><span></span><span></span>
         </div>
         <ul class="nav-links" id="navLinks">
             <li><a href="#home" onclick="closeMenu()">Home</a></li>
             <li><a href="#about" onclick="closeMenu()">About</a></li>
+            <li><a href="#fun-facts" onclick="closeMenu()">Fun Facts</a></li>
             <li><a href="#profiles" onclick="closeMenu()">Profiles</a></li>
             <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
             <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
@@ -335,10 +435,9 @@
     <section id="about" class="about">
         <h2>About Me</h2>
         <div class="about-content">
-            <p>Data Analyst with a Master’s in Data Analytics Engineering. I specialize in transforming complex datasets into actionable insights that influence strategy and create measurable business value.</p>
+            <p>Data Analyst with a Master's in Data Analytics Engineering. I specialize in transforming complex datasets into actionable insights that influence strategy and create measurable business value.</p>
             <p>My expertise spans the full data lifecycle—from ETL pipeline development and data warehousing to advanced analytics and compelling visualizations. I've delivered solutions that improved forecast accuracy by 15%, reduced reporting time by 40%, and saved hundreds of audit hours through intelligent automation.</p>
             <p>Skilled in Python, SQL, Tableau, Power BI, and modern cloud technologies (AWS, Snowflake), I'm passionate about using data to solve real-world business challenges.</p>
-
             <div class="stats">
                 <a href="#project-autoconnect" class="stat-item">
                     <div class="stat-icon">🚗</div>
@@ -360,6 +459,42 @@
                     <h3>Flights Dashboard</h3>
                     <p>Power BI Holiday Analysis</p>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FUN FACTS -->
+    <section id="fun-facts" class="fun-facts">
+        <h2>Fun Facts</h2>
+        <div class="sql-block">
+            <div class="sql-topbar">
+                <div class="sql-dot red"></div>
+                <div class="sql-dot yellow"></div>
+                <div class="sql-dot green"></div>
+                <span class="sql-filename">fun_facts.sql</span>
+            </div>
+            <div class="sql-query-block">
+                <span class="sql-kw">SELECT</span> fact_id, category, value<br>
+                <span class="sql-kw">FROM</span> <span class="sql-table-name">ashmita.fun_facts</span><br>
+                <span class="sql-kw">ORDER BY</span> fact_id <span class="sql-kw">ASC</span>;
+            </div>
+            <div class="sql-btn-row">
+                <button class="sql-run-btn" id="sqlRunBtn" onclick="runFunFactsQuery()">
+                    <span id="sqlBtnIcon">&#9654;</span>
+                    <div class="sql-spinner" id="sqlSpinner"></div>
+                    <span id="sqlBtnText">Run query</span>
+                </button>
+                <button class="sql-reset-btn" id="sqlResetBtn" onclick="resetFunFactsQuery()">&#8635; Reset</button>
+            </div>
+            <div class="sql-status" id="sqlStatus"></div>
+            <div id="sqlResultsWrap" style="display:none">
+                <table class="sql-results">
+                    <thead>
+                        <tr><th>fact_id</th><th>category</th><th>value</th></tr>
+                    </thead>
+                    <tbody id="sqlTbody"></tbody>
+                </table>
+                <div class="sql-footer" id="sqlFooter"><span id="sqlRowCount"></span></div>
             </div>
         </div>
     </section>
@@ -549,7 +684,6 @@
                 <strong>LinkedIn:</strong><br>
                 <a href="https://www.linkedin.com/in/ashmita-pal" target="_blank">linkedin.com/in/ashmita-pal</a>
             </div>
-
             <div class="contact-item">
                 <strong>GitHub:</strong><br>
                 <a href="https://github.com/ashmita-code" target="_blank">github.com/ashmita-code</a>
@@ -566,7 +700,7 @@
     </section>
 
     <a href="#home" class="back-to-top" id="backToTop">↑</a>
-    <footer><p>&copy; 2025 Ashmita Pal. All rights reserved.</p></footer>
+    <footer><p>&copy; 2026 Ashmita Pal. All rights reserved.</p></footer>
 
     <script>
         const canvas = document.getElementById('particles-canvas');
@@ -606,18 +740,75 @@
 
         const projectCards = document.querySelectorAll('.project-card');
         projectCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-10px)';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-            });
+            card.addEventListener('mouseenter', () => { card.style.transform = 'translateY(-10px)'; });
+            card.addEventListener('mouseleave', () => { card.style.transform = 'translateY(0)'; });
         });
 
         function toggleMenu(){ const n=document.getElementById('navLinks'); const h=document.querySelector('.hamburger');
             n.classList.toggle('active'); h.classList.toggle('active'); }
         function closeMenu(){ const n=document.getElementById('navLinks'); const h=document.querySelector('.hamburger');
             n.classList.remove('active'); h.classList.remove('active'); }
+
+        const funFactsRows = [
+            ['001','hobbies','Dance & reading crime novels'],
+            ['002','data_fun','Loves solving SQL murder mystery games'],
+            ['003','guilty_pleasure','Anything chocolate'],
+            ['004','daily_ritual','Wordle every morning, no exceptions'],
+            ['005','unpopular_opinion','Excel is underrated'],
+            ['006','fun_fact','Can finish a 300-page book in half a day'],
+            ['007','data_pet_peeve','Unlabeled axes, wrong scales — data visualization crimes'],
+            ['008','dream_dataset',"Netflix — who wouldn't want to analyze binge-watching patterns?"],
+            ['009','if_i_were_a_chart','A bar chart — straightforward, no nonsense, gets the point across'],
+            ['010','love_language','Clean, well-documented code with annotations'],
+        ];
+        function runFunFactsQuery() {
+            const btn = document.getElementById('sqlRunBtn');
+            const spinner = document.getElementById('sqlSpinner');
+            const btnIcon = document.getElementById('sqlBtnIcon');
+            const btnText = document.getElementById('sqlBtnText');
+            const status = document.getElementById('sqlStatus');
+            const tbody = document.getElementById('sqlTbody');
+            const resultsWrap = document.getElementById('sqlResultsWrap');
+            const footer = document.getElementById('sqlFooter');
+            const resetBtn = document.getElementById('sqlResetBtn');
+            btn.disabled = true;
+            btnIcon.style.display = 'none';
+            spinner.style.display = 'block';
+            btnText.textContent = 'Executing...';
+            status.textContent = 'Connecting to ashmita.fun_facts...';
+            tbody.innerHTML = '';
+            resultsWrap.style.display = 'none';
+            footer.style.opacity = '0';
+            resetBtn.style.display = 'none';
+            setTimeout(() => { status.textContent = 'Scanning table... 10 rows found'; }, 500);
+            setTimeout(() => {
+                status.textContent = 'Fetching results...';
+                resultsWrap.style.display = 'block';
+                funFactsRows.forEach((r, i) => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `<td class="td-id">${r[0]}</td><td class="td-cat">${r[1]}</td><td class="td-val">${r[2]}</td>`;
+                    tbody.appendChild(tr);
+                    setTimeout(() => tr.classList.add('sql-row-visible'), i * 120);
+                });
+                setTimeout(() => {
+                    status.textContent = '';
+                    spinner.style.display = 'none';
+                    btnIcon.style.display = 'inline';
+                    btnText.textContent = 'Run query';
+                    btn.disabled = false;
+                    document.getElementById('sqlRowCount').innerHTML = '<span>10 rows returned</span> &nbsp;|&nbsp; query time: 0.003s';
+                    footer.style.opacity = '1';
+                    resetBtn.style.display = 'flex';
+                }, funFactsRows.length * 120 + 200);
+            }, 1200);
+        }
+        function resetFunFactsQuery() {
+            document.getElementById('sqlTbody').innerHTML = '';
+            document.getElementById('sqlResultsWrap').style.display = 'none';
+            document.getElementById('sqlFooter').style.opacity = '0';
+            document.getElementById('sqlStatus').textContent = '';
+            document.getElementById('sqlResetBtn').style.display = 'none';
+        }
 
         window.addEventListener('scroll', ()=>{
             const b=document.getElementById('backToTop');
@@ -626,4 +817,3 @@
     </script>
 </body>
 </html>
-
