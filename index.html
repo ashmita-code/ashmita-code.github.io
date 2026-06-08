@@ -90,25 +90,14 @@
             overflow: hidden;
         }
         #particles-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
-
         .hero-content {
-          position: relative;
-          z-index: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 3rem;
-          width: 100%;
-          max-width: 1100px;
-          margin: 0 auto;
+          position: relative; z-index: 1; display: flex; align-items: center;
+          justify-content: center; gap: 3rem; width: 100%; max-width: 1100px; margin: 0 auto;
         }
-
         .hero-left { flex: 1; display: flex; flex-direction: column; justify-content: center; }
         .hero-right { flex: 1; display: flex; justify-content: center; align-items: center; }
-
         .avatar-outer{
-            width: 400px; height: 400px; border-radius: 50%;
-            padding: 10px;
+            width: 400px; height: 400px; border-radius: 50%; padding: 10px;
             background: linear-gradient(135deg, #0e7490, #0891b2);
             display: inline-flex; align-items: center; justify-content: center;
             position: relative; isolation: isolate;
@@ -124,16 +113,12 @@
             width: 100%; height: 100%; border-radius: 50%;
             background:#fff; padding: 6px; display:flex; align-items:center; justify-content:center;
         }
-        .profile-photo{
-            width: 100%; height: 100%; border-radius: 50%;
-            object-fit: cover; display:block; background:#fff;
-        }
+        .profile-photo{ width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display:block; background:#fff; }
         @keyframes ringPulse{
             0%,100%{ box-shadow:0 0 26px rgba(8,145,178,.30), 0 12px 36px rgba(0,0,0,.22); }
             50%    { box-shadow:0 0 44px rgba(8,145,178,.55), 0 20px 54px rgba(0,0,0,.28); }
         }
         @media (prefers-reduced-motion: reduce){ .avatar-outer{ animation: none; } }
-
         .hero h1 { font-size: 4rem; margin-bottom: 1rem; }
         .hero p { font-size: 1.5rem; margin-bottom: 0.5rem; opacity: 0.95; }
         .hero .subtitle { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.85; font-family: 'Courier New', monospace; min-height: 1.6rem; }
@@ -152,7 +137,6 @@
         .about { background: #ecfeff; }
         .about-content { max-width: 900px; margin: 0 auto; font-size: 1.1rem; color: #334155; line-height: 1.8; }
         .about-content p { margin-bottom: 1rem; }
-        .about-content p:first-child { text-align: justify; }
 
         .stats {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -172,164 +156,72 @@
         .stat-item h3 { font-size: 1.3rem; color: #0e7490; margin-bottom: .5rem; font-weight: 700; }
         .stat-item p { color: #64748b; font-size: .9rem; }
 
-        /* Profiles strip */
-        .profiles {
-            background: #ffffff;
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
+        .profiles { background: #ffffff; padding-top: 3rem; padding-bottom: 3rem; }
         .profiles h2 { margin-bottom: 2rem; }
-        .profiles-grid{
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
+        .profiles-grid{ max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
         .profile-card{
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 1.5rem 1.25rem;
-            box-shadow: 0 8px 22px rgba(14,116,144,0.12);
-            border: 1px solid rgba(14,116,144,0.10);
-            text-decoration: none;
-            transition: transform .25s, box-shadow .25s, background .25s;
-            display: block;
+            background: #ffffff; border-radius: 16px; padding: 1.5rem 1.25rem;
+            box-shadow: 0 8px 22px rgba(14,116,144,0.12); border: 1px solid rgba(14,116,144,0.10);
+            text-decoration: none; transition: transform .25s, box-shadow .25s, background .25s; display: block;
         }
-        .profile-card:hover{
-            transform: translateY(-8px);
-            box-shadow: 0 16px 40px rgba(14,116,144,0.20);
-            background: linear-gradient(135deg,#0e7490 0%, #0891b2 100%);
-        }
-        .profile-card:hover .profile-title,
-        .profile-card:hover .profile-sub { color:#fff; }
-        .profile-icon{
-            font-size: 2.2rem;
-            margin-bottom: .75rem;
-            display: inline-block;
-            transition: transform .25s;
-        }
+        .profile-card:hover{ transform: translateY(-8px); box-shadow: 0 16px 40px rgba(14,116,144,0.20); background: linear-gradient(135deg,#0e7490 0%, #0891b2 100%); }
+        .profile-card:hover .profile-title, .profile-card:hover .profile-sub { color:#fff; }
+        .profile-icon{ font-size: 2.2rem; margin-bottom: .75rem; display: inline-block; transition: transform .25s; }
         .profile-card:hover .profile-icon{ transform: scale(1.12); }
-        .profile-title{
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: #164e63;
-            margin-bottom: .25rem;
-        }
-        .profile-sub{
-            font-size: .9rem;
-            color: #64748b;
-            line-height: 1.4;
-        }
+        .profile-title{ font-size: 1.05rem; font-weight: 700; color: #164e63; margin-bottom: .25rem; }
+        .profile-sub{ font-size: .9rem; color: #64748b; line-height: 1.4; }
 
         /* FUN FACTS */
         .fun-facts { background: #f0f9ff; }
-        .fun-facts h2 { color: #164e63; }
         .sql-block {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 20px rgba(14,116,144,0.10);
+            max-width: 800px; margin: 0 auto; background: #ffffff; border-radius: 12px;
+            overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(14,116,144,0.10);
             font-family: 'Courier New', Courier, monospace;
         }
-        .sql-topbar {
-            background: #f1f5f9;
-            padding: 0.75rem 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            border-bottom: 1px solid #e2e8f0;
-        }
+        .sql-topbar { background: #f1f5f9; padding: 0.75rem 1.25rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid #e2e8f0; }
         .sql-dot { width: 12px; height: 12px; border-radius: 50%; }
         .sql-dot.red { background: #ef4444; }
         .sql-dot.yellow { background: #eab308; }
         .sql-dot.green { background: #22c55e; }
         .sql-filename { color: #94a3b8; font-size: 0.8rem; margin-left: 0.5rem; }
-        .sql-query-block {
-            padding: 1.25rem 1.5rem;
-            font-size: 0.9rem;
-            line-height: 1.9;
-            color: #475569;
-            background: #f8fafc;
-            border-bottom: 1px solid #e2e8f0;
-        }
+        .sql-query-block { padding: 1.25rem 1.5rem; font-size: 0.9rem; line-height: 1.9; color: #475569; background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
         .sql-kw { color: #0e7490; font-weight: 700; }
         .sql-table-name { color: #0891b2; }
         .sql-btn-row { display: flex; gap: 10px; margin: 1rem 1.25rem; }
         .sql-run-btn {
-            display: flex; align-items: center; gap: 8px;
-            background: #0e7490; color: #ffffff; border: none; border-radius: 8px;
-            padding: 10px 20px; font-family: 'Courier New', monospace; font-size: 13px;
-            font-weight: 700; cursor: pointer; transition: background 0.2s, transform 0.1s;
+            display: flex; align-items: center; gap: 8px; background: #0e7490; color: #ffffff;
+            border: none; border-radius: 8px; padding: 10px 20px; font-family: 'Courier New', monospace;
+            font-size: 13px; font-weight: 700; cursor: pointer; transition: background 0.2s, transform 0.1s;
         }
         .sql-run-btn:hover { background: #0891b2; }
         .sql-run-btn:active { transform: scale(0.97); }
         .sql-run-btn:disabled { background: #e2e8f0; color: #94a3b8; cursor: not-allowed; }
         .sql-reset-btn {
-            display: none; align-items: center; gap: 6px;
-            background: transparent; color: #64748b; border: 1px solid #cbd5e1; border-radius: 8px;
-            padding: 10px 16px; font-family: 'Courier New', monospace; font-size: 13px;
-            cursor: pointer; transition: background 0.2s, color 0.2s;
+            display: none; align-items: center; gap: 6px; background: transparent; color: #64748b;
+            border: 1px solid #cbd5e1; border-radius: 8px; padding: 10px 16px;
+            font-family: 'Courier New', monospace; font-size: 13px; cursor: pointer; transition: background 0.2s, color 0.2s;
         }
         .sql-reset-btn:hover { background: #f1f5f9; color: #334155; }
-        .sql-spinner {
-            width: 14px; height: 14px; border: 2px solid #ffffff;
-            border-top-color: transparent; border-radius: 50%;
-            animation: sqlSpin 0.6s linear infinite; display: none;
-        }
+        .sql-spinner { width: 14px; height: 14px; border: 2px solid #ffffff; border-top-color: transparent; border-radius: 50%; animation: sqlSpin 0.6s linear infinite; display: none; }
         @keyframes sqlSpin { to { transform: rotate(360deg); } }
         .sql-status { font-size: 12px; color: #94a3b8; padding: 0 1.25rem 0.75rem; min-height: 18px; }
-        .sql-results {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85rem;
-        }
+        .sql-results { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
         .sql-results thead tr { background: #f1f5f9; }
-        .sql-results thead th {
-            color: #0e7490;
-            padding: 10px 16px;
-            text-align: left;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            border-right: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
-        }
+        .sql-results thead th { color: #0e7490; padding: 10px 16px; text-align: left; font-weight: 700; letter-spacing: 0.04em; border-right: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
         .sql-results thead th:last-child { border-right: none; }
-        .sql-results tbody tr {
-            border-bottom: 1px solid #f1f5f9;
-            opacity: 0; transform: translateY(6px);
-            transition: opacity 0.25s, transform 0.25s, background 0.15s;
-        }
+        .sql-results tbody tr { border-bottom: 1px solid #f1f5f9; opacity: 0; transform: translateY(6px); transition: opacity 0.25s, transform 0.25s, background 0.15s; }
         .sql-results tbody tr.sql-row-visible { opacity: 1; transform: translateY(0); }
         .sql-results tbody tr:hover { background: #f0f9ff; }
-        .sql-results tbody td {
-            padding: 10px 16px;
-            border-right: 1px solid #f1f5f9;
-            vertical-align: middle;
-        }
+        .sql-results tbody td { padding: 10px 16px; border-right: 1px solid #f1f5f9; vertical-align: middle; }
         .sql-results tbody td:last-child { border-right: none; }
         .td-id { color: #94a3b8; }
         .td-cat { color: #0e7490; font-weight: 600; }
         .td-val { color: #334155; }
-        .sql-footer {
-            padding: 0.75rem 1.5rem;
-            background: #f8fafc;
-            border-top: 1px solid #e2e8f0;
-            font-size: 0.8rem;
-            color: #94a3b8;
-            opacity: 0; transition: opacity 0.3s;
-        }
+        .sql-footer { padding: 0.75rem 1.5rem; background: #f8fafc; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #94a3b8; opacity: 0; transition: opacity 0.3s; }
         .sql-footer span { color: #0e7490; font-weight: 600; }
 
         .experience-timeline { max-width: 1000px; margin: 0 auto; }
-        .experience-item {
-            background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-left: 4px solid #0e7490;
-            transition: transform .3s, box-shadow .3s;
-        }
+        .experience-item { background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-left: 4px solid #0e7490; transition: transform .3s, box-shadow .3s; }
         .experience-item:hover { transform: translateX(10px); box-shadow: 0 8px 30px rgba(14,116,144,.2); }
         .experience-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; }
         .experience-header h3 { color: #164e63; font-size: 1.4rem; margin-bottom: .3rem; }
@@ -339,21 +231,10 @@
         .experience-item li { margin-bottom: .5rem; }
 
         .projects { background: #ecfeff; }
-        .projects-grid {
-            display: grid; grid-template-columns: repeat(2, 1fr);
-            gap: 2rem; max-width: 1200px; margin: 0 auto;
-        }
-        .project-card {
-            background: white; border-radius: 15px; overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,.1); transition: transform .3s, box-shadow .3s;
-            transform-style: preserve-3d; perspective: 1000px;
-        }
+        .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .project-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,.1); transition: transform .3s, box-shadow .3s; }
         .project-card:hover { box-shadow: 0 15px 40px rgba(14,116,144,.25); }
-        .project-image {
-            width: 100%; height: 200px;
-            background: linear-gradient(135deg, #164e63 0%, #0e7490 50%, #0891b2 100%);
-            display: flex; align-items: center; justify-content: center; font-size: 3rem;
-        }
+        .project-image { width: 100%; height: 200px; background: linear-gradient(135deg, #164e63 0%, #0e7490 50%, #0891b2 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
         .project-content { padding: 1.5rem; }
         .project-content h3 { margin-bottom: .5rem; color: #164e63; }
         .project-content .tech { color: #0e7490; font-size: .9rem; margin-bottom: 1rem; font-weight: 600; }
@@ -363,20 +244,13 @@
 
         .skills-container { max-width: 1000px; margin: 0 auto; }
         .skill-category { margin-bottom: 3rem; }
-        .skill-category h3 {
-            color: #164e63; font-size: 1.3rem; margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 2px solid #0e7490;
-        }
+        .skill-category h3 { color: #164e63; font-size: 1.3rem; margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 2px solid #0e7490; }
         .skills-list { display: flex; flex-wrap: wrap; gap: 1rem; }
-        .skill-tag {
-            background: white; padding: .7rem 1.5rem; border-radius: 25px; color: #164e63; font-weight: 500;
-            box-shadow: 0 3px 10px rgba(14,116,144,.2); transition: transform .3s, box-shadow .3s;
-        }
+        .skill-tag { background: white; padding: .7rem 1.5rem; border-radius: 25px; color: #164e63; font-weight: 500; box-shadow: 0 3px 10px rgba(14,116,144,.2); transition: transform .3s, box-shadow .3s; }
         .skill-tag:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(14,116,144,.3); background: #0e7490; color: #fff; }
 
         .contact { background: #ecfeff; text-align: center; }
-        .contact-info {
-            display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem;
-        }
+        .contact-info { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem; }
         .contact-item { font-size: 1.1rem; color: #475569; }
         .contact-item strong { color: #164e63; }
         .contact-item a { color: #0e7490; text-decoration: none; transition: color .3s; font-weight: 600; }
@@ -390,20 +264,14 @@
         }
         .back-to-top.visible { opacity: 1; pointer-events: auto; }
         .back-to-top:hover { transform: translateY(-5px); background: #164e63; }
-
         footer { background: #164e63; color: #fff; text-align: center; padding: 2rem; }
 
-        /* MOBILE */
         @media (max-width: 768px) {
             .hero-content { flex-direction: column; text-align: center; }
             .hero-left { margin-top: 2rem; }
             .avatar-outer { width: 240px; height: 240px; padding: 8px; }
             .hamburger { display: flex; }
-            .nav-links {
-                position: fixed; top: 80px; left: -100%; width: 100%; background: #fff;
-                flex-direction: column; padding: 2rem; gap: 1.5rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-                transition: left 0.3s;
-            }
+            .nav-links { position: fixed; top: 80px; left: -100%; width: 100%; background: #fff; flex-direction: column; padding: 2rem; gap: 1.5rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: left 0.3s; }
             .nav-links.active { left: 0; }
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.2rem; }
@@ -423,467 +291,441 @@
     </style>
 </head>
 <body>
-    <div id="scroll-progress-bar">
-        <span id="scroll-progress-label">Loading Ashmita...</span>
-        <div id="scroll-progress-track"><div id="scroll-progress-fill"></div></div>
-        <span id="scroll-progress-pct">0%</span>
+<div id="scroll-progress-bar">
+    <span id="scroll-progress-label">Loading Ashmita...</span>
+    <div id="scroll-progress-track"><div id="scroll-progress-fill"></div></div>
+    <span id="scroll-progress-pct">0%</span>
+</div>
+<nav>
+    <div class="logo">Ashmita Pal</div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home" onclick="closeMenu()">Home</a></li>
+        <li><a href="#about" onclick="closeMenu()">About</a></li>
+        <li><a href="#fun-facts" onclick="closeMenu()">Fun Facts</a></li>
+        <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+        <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+        <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+        <li><a href="#profiles-certs" onclick="closeMenu()">Profiles</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="home" class="hero">
+    <canvas id="particles-canvas"></canvas>
+    <div class="hero-content">
+        <div class="hero-left">
+            <h1>Ashmita Pal</h1>
+            <p>Data Analyst | Analytics Engineer</p>
+            <p class="subtitle"><span id="typingText"></span><span class="typing-cursor"></span></p>
+            <div>
+                <a href="#contact" class="cta-button">Get In Touch</a>
+                <a href="https://www.linkedin.com/in/ashmita-pal" class="cta-button secondary" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="avatar-outer">
+                <div class="avatar-inner">
+                    <img src="profile.jpg" alt="Ashmita Pal" class="profile-photo">
+                </div>
+            </div>
+        </div>
     </div>
-    <nav>
-        <div class="logo">Ashmita Pal</div>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home" onclick="closeMenu()">Home</a></li>
-            <li><a href="#about" onclick="closeMenu()">About</a></li>
-            <li><a href="#fun-facts" onclick="closeMenu()">Fun Facts</a></li>
-            <li><a href="#profiles" onclick="closeMenu()">Profiles</a></li>
-            <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
-            <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
-            <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
-            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-        </ul>
-    </nav>
+</section>
 
-    <section id="home" class="hero">
-        <canvas id="particles-canvas"></canvas>
-        <div class="hero-content">
-            <div class="hero-left">
-                <h1>Ashmita Pal</h1>
-                <p>Data Analyst | Analytics Engineer</p>
-                <p class="subtitle"><span id="typingText"></span><span class="typing-cursor"></span></p>
+<section id="about" class="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+        <p>Data Analyst with a Master's in Data Analytics Engineering. I specialize in transforming complex datasets into actionable insights that influence strategy and create measurable business value.</p>
+        <p>My expertise spans the full data lifecycle—from ETL pipeline development and data warehousing to advanced analytics and compelling visualizations. I've delivered solutions that improved forecast accuracy by 15%, reduced reporting time by 40%, and saved hundreds of audit hours through intelligent automation.</p>
+        <p>Skilled in Python, SQL, Tableau, Power BI, and modern cloud technologies (AWS, Snowflake), I'm passionate about using data to solve real-world business challenges.</p>
+    </div>
+</section>
+
+<!-- FUN FACTS -->
+<section id="fun-facts" class="fun-facts">
+    <h2>Fun Facts</h2>
+    <div class="sql-block">
+        <div class="sql-topbar">
+            <div class="sql-dot red"></div>
+            <div class="sql-dot yellow"></div>
+            <div class="sql-dot green"></div>
+            <span class="sql-filename">fun_facts.sql</span>
+        </div>
+        <div class="sql-query-block">
+            <span class="sql-kw">SELECT</span> fact_id, category, value<br>
+            <span class="sql-kw">FROM</span> <span class="sql-table-name">ashmita.fun_facts</span><br>
+            <span class="sql-kw">ORDER BY</span> fact_id <span class="sql-kw">ASC</span>;
+        </div>
+        <div class="sql-btn-row">
+            <button class="sql-run-btn" id="sqlRunBtn" onclick="runFunFactsQuery()">
+                <span id="sqlBtnIcon">&#9654;</span>
+                <div class="sql-spinner" id="sqlSpinner"></div>
+                <span id="sqlBtnText">Run query</span>
+            </button>
+            <button class="sql-reset-btn" id="sqlResetBtn" onclick="resetFunFactsQuery()">&#8635; Reset</button>
+        </div>
+        <div class="sql-status" id="sqlStatus"></div>
+        <div id="sqlResultsWrap" style="display:none">
+            <table class="sql-results">
+                <thead><tr><th>fact_id</th><th>category</th><th>value</th></tr></thead>
+                <tbody id="sqlTbody"></tbody>
+            </table>
+            <div class="sql-footer" id="sqlFooter"><span id="sqlRowCount"></span></div>
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <h2>Professional Experience</h2>
+    <div class="experience-timeline">
+        <div class="experience-item">
+            <div class="experience-header">
                 <div>
-                    <a href="#contact" class="cta-button">Get In Touch</a>
-                    <a href="https://www.linkedin.com/in/ashmita-pal" class="cta-button secondary" target="_blank">LinkedIn</a>
+                    <h3>Financial Data Analyst Co-op</h3>
+                    <p class="company">Mimecast, USA</p>
                 </div>
+                <span class="date">Aug 2024 - Dec 2024</span>
             </div>
-            <div class="hero-right">
-                <div class="avatar-outer">
-                    <div class="avatar-inner">
-                        <img src="profile.jpg" alt="Ashmita Pal" class="profile-photo">
-                    </div>
+            <ul>
+                <li>Delivered Tableau dashboards tracking 20+ KPIs across 4 product lines, boosting forecast accuracy by <strong>15%</strong> and supporting <strong>$500M+</strong> ARR.</li>
+                <li>Automated Snowflake + dbt pipelines using CTEs and window functions, cutting reporting runtime by <strong>40%</strong> and ensuring real-time data refreshes.</li>
+                <li>Eliminated manual Jira reporting with dbt macros + SQL, providing automated daily updates for executive KPIs.</li>
+                <li>Implemented QA framework in Excel Power Query and dbt tests, saving <strong>20+ audit hours/month</strong> across <strong>$50M+</strong> transactions.</li>
+                <li>Improved KPI accuracy by <strong>25%</strong> through lineage validation and automated error tracking.</li>
+            </ul>
+        </div>
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <h3>Data Analyst</h3>
+                    <p class="company">Northeastern University, Boston, USA</p>
                 </div>
+                <span class="date">Oct 2023 – Aug 2024</span>
+            </div>
+            <ul>
+                <li>Automated Snowflake ↔ AWS ETL (S3, Glue, Lambda, Athena, Redshift), cutting manual ingestion by <strong>90%</strong> and streamlining <strong>50+ tables</strong>.</li>
+                <li>Led a <strong>3-member</strong> effort to optimize Glue (partitioning, predicate pushdown, schema evolution), reducing runtime by <strong>30%</strong> and scaling to <strong>1M+ records/month</strong>.</li>
+                <li>Ran A/B tests on new KPI logic; applied <strong>t-tests/chi-square (95% confidence)</strong>, improving metric consistency by <strong>10%</strong>.</li>
+                <li>Built QuickSight KPI dashboards for finance &amp; operations with daily refreshes, accelerating reporting cycles and executive visibility.</li>
+                <li>Validated <strong>100K+ multi-source</strong> records in PostgreSQL and Alteryx, ensuring <strong>99.5%</strong> data reliability for cross-functional teams.</li>
+            </ul>
+        </div>
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <h3>Data Analyst Intern</h3>
+                    <p class="company">Corizo, Bengaluru, India</p>
+                </div>
+                <span class="date">Jan 2023 - Jun 2023</span>
+            </div>
+            <ul>
+                <li>Led a 3-member team to build ARIMA and Prophet models forecasting weekly product demand with <strong>92%</strong> accuracy, improving stock planning and reducing inventory costs by <strong>15%</strong>.</li>
+                <li>Automated variance reporting with VBA, Power Query, and SQL, reducing manual effort by <strong>80%</strong> and speeding up insights.</li>
+                <li>Developed Tableau dashboards visualizing forecast vs. actuals, category trends, and fulfillment KPIs, supporting strategic resource allocation.</li>
+                <li>Partnered with supply chain and finance teams to operationalize forecasts, cutting excess inventory by <strong>10%</strong> and boosting fulfillment efficiency.</li>
+            </ul>
+        </div>
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <h3>Data &amp; ML Assistant</h3>
+                    <p class="company">Vellore Institute of Technology, India</p>
+                </div>
+                <span class="date">Jan 2022 – Dec 2022</span>
+            </div>
+            <ul>
+                <li>Built Snowflake SQL validation checks (CTEs, window functions) resolving <strong>60+</strong> issues across <strong>10</strong> financial tables, improving accuracy on <strong>1M+</strong> records.</li>
+                <li>Designed Tableau dashboards for KPI tracking, cutting audit-prep time by <strong>35%</strong> and improving operational visibility.</li>
+                <li>Automated Excel reporting (Power Query, PivotTables, VBA) to deliver timely, error-free management reports.</li>
+                <li>Defined and maintained data-quality &amp; reporting KPIs; collaborated with cross-functional teams to resolve discrepancies.</li>
+                <li>Optimized PySpark pipelines on Hadoop, reducing processing time by <strong>40%</strong> and increasing downstream data availability.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="projects">
+    <h2>Featured Projects</h2>
+    <div class="stats" style="max-width:1200px;margin:0 auto 3rem;">
+        <a href="#project-autoconnect" class="stat-item">
+            <div class="stat-icon">🚗</div>
+            <h3>AutoConnect</h3>
+            <p>Car Reselling Database</p>
+        </a>
+        <a href="#project-ecommerce" class="stat-item">
+            <div class="stat-icon">📊</div>
+            <h3>E-Commerce Analysis</h3>
+            <p>RFM Customer Segmentation</p>
+        </a>
+        <a href="#project-diabetes" class="stat-item">
+            <div class="stat-icon">🏥</div>
+            <h3>Diabetes Prediction</h3>
+            <p>Machine Learning Analysis</p>
+        </a>
+        <a href="#project-flights" class="stat-item">
+            <div class="stat-icon">✈️</div>
+            <h3>Flights Dashboard</h3>
+            <p>Power BI Holiday Analysis</p>
+        </a>
+    </div>
+    <div class="projects-grid">
+        <div class="project-card" id="project-autoconnect">
+            <div class="project-image">🚗</div>
+            <div class="project-content">
+                <h3>AutoConnect: Streamlined Car Reselling Solutions</h3>
+                <p class="tech">SQL | MongoDB | Neo4j | Python</p>
+                <p>Directed a 3-member team to design a centralized database for vehicle purchases and sales. Utilized SQL, MongoDB, and Neo4j to capture and query 500+ customer, agent, and vehicle links, reducing lookup time by 30%. Combined SQL and Python to analyze sales trends, customer preferences, and inventory performance.</p>
+                <a href="https://github.com/ashmita-code/autoconnect" target="_blank" class="project-link">View on GitHub →</a>
             </div>
         </div>
-    </section>
-
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <p>Data Analyst with a Master's in Data Analytics Engineering. I specialize in transforming complex datasets into actionable insights that influence strategy and create measurable business value.</p>
-            <p>My expertise spans the full data lifecycle—from ETL pipeline development and data warehousing to advanced analytics and compelling visualizations. I've delivered solutions that improved forecast accuracy by 15%, reduced reporting time by 40%, and saved hundreds of audit hours through intelligent automation.</p>
-            <p>Skilled in Python, SQL, Tableau, Power BI, and modern cloud technologies (AWS, Snowflake), I'm passionate about using data to solve real-world business challenges.</p>
-            <div class="stats">
-                <a href="#project-autoconnect" class="stat-item">
-                    <div class="stat-icon">🚗</div>
-                    <h3>AutoConnect</h3>
-                    <p>Car Reselling Database</p>
-                </a>
-                <a href="#project-ecommerce" class="stat-item">
-                    <div class="stat-icon">📊</div>
-                    <h3>E-Commerce Analysis</h3>
-                    <p>RFM Customer Segmentation</p>
-                </a>
-                <a href="#project-diabetes" class="stat-item">
-                    <div class="stat-icon">🏥</div>
-                    <h3>Diabetes Prediction</h3>
-                    <p>Machine Learning Analysis</p>
-                </a>
-                <a href="#project-flights" class="stat-item">
-                    <div class="stat-icon">✈️</div>
-                    <h3>Flights Dashboard</h3>
-                    <p>Power BI Holiday Analysis</p>
-                </a>
+        <div class="project-card" id="project-ecommerce">
+            <div class="project-image">📊</div>
+            <div class="project-content">
+                <h3>E-Commerce Transaction Analysis</h3>
+                <p class="tech">Python | Pandas | Power BI | RFM Analysis</p>
+                <p>Performed RFM analysis on an E-Commerce dataset, segmenting customers for retention and targeting strategies. Found 85% "At-Risk/Hibernating" vs. 15% "Loyal" customers, with loyal buyers driving 60% of CLV. Built Power BI dashboards to highlight cohort behavior and showed targeted retention could raise revenue 25%.</p>
+                <a href="https://github.com/ashmita-code/ecommerce-analysis" target="_blank" class="project-link">View on GitHub →</a>
             </div>
         </div>
-    </section>
-
-    <!-- FUN FACTS -->
-    <section id="fun-facts" class="fun-facts">
-        <h2>Fun Facts</h2>
-        <div class="sql-block">
-            <div class="sql-topbar">
-                <div class="sql-dot red"></div>
-                <div class="sql-dot yellow"></div>
-                <div class="sql-dot green"></div>
-                <span class="sql-filename">fun_facts.sql</span>
-            </div>
-            <div class="sql-query-block">
-                <span class="sql-kw">SELECT</span> fact_id, category, value<br>
-                <span class="sql-kw">FROM</span> <span class="sql-table-name">ashmita.fun_facts</span><br>
-                <span class="sql-kw">ORDER BY</span> fact_id <span class="sql-kw">ASC</span>;
-            </div>
-            <div class="sql-btn-row">
-                <button class="sql-run-btn" id="sqlRunBtn" onclick="runFunFactsQuery()">
-                    <span id="sqlBtnIcon">&#9654;</span>
-                    <div class="sql-spinner" id="sqlSpinner"></div>
-                    <span id="sqlBtnText">Run query</span>
-                </button>
-                <button class="sql-reset-btn" id="sqlResetBtn" onclick="resetFunFactsQuery()">&#8635; Reset</button>
-            </div>
-            <div class="sql-status" id="sqlStatus"></div>
-            <div id="sqlResultsWrap" style="display:none">
-                <table class="sql-results">
-                    <thead>
-                        <tr><th>fact_id</th><th>category</th><th>value</th></tr>
-                    </thead>
-                    <tbody id="sqlTbody"></tbody>
-                </table>
-                <div class="sql-footer" id="sqlFooter"><span id="sqlRowCount"></span></div>
+        <div class="project-card" id="project-diabetes">
+            <div class="project-image">🏥</div>
+            <div class="project-content">
+                <h3>Diabetes Analysis and Prediction</h3>
+                <p class="tech">Python | Machine Learning | Data Analysis</p>
+                <p>Developed machine learning models to predict diabetes outcomes using patient health data. Implemented classification algorithms to identify high-risk patients and analyzed key health indicators. Created data visualizations to communicate findings and support healthcare decision-making with predictive insights.</p>
+                <a href="https://github.com/ashmita-code/diabetes-analysis-and-prediction" target="_blank" class="project-link">View on GitHub →</a>
             </div>
         </div>
-    </section>
-
-    <section class="profiles" id="profiles">
-        <h2>Profiles &amp; Certifications</h2>
-        <div class="profiles-grid">
-            <a class="profile-card" href="https://github.com/ashmita-code" target="_blank">
-                <span class="profile-icon">💻</span>
-                <div class="profile-title">GitHub</div>
-                <div class="profile-sub">Projects &amp; repositories</div>
-            </a>
-            <a class="profile-card" href="https://www.hackerrank.com/profile/ashmitapal2848" target="_blank">
-                <span class="profile-icon">🧠</span>
-                <div class="profile-title">HackerRank</div>
-                <div class="profile-sub">Coding practice &amp; badges</div>
-            </a>
-            <a class="profile-card" href="https://www.credly.com/badges/6b656032-3ccd-4bb0-aa39-48c8b2175537/public_url" target="_blank">
-                <span class="profile-icon">🏅</span>
-                <div class="profile-title">Tableau Certificate</div>
-                <div class="profile-sub">View credential on Credly</div>
-            </a>
-        </div>
-    </section>
-
-    <section id="experience">
-        <h2>Professional Experience</h2>
-        <div class="experience-timeline">
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <h3>Financial Data Analyst Co-op</h3>
-                        <p class="company">Mimecast, USA</p>
-                    </div>
-                    <span class="date">Aug 2024 - Dec 2024</span>
-                </div>
-                <ul>
-                    <li>Delivered Tableau dashboards tracking 20+ KPIs across 4 product lines, boosting forecast accuracy by <strong>15%</strong> and supporting <strong>$500M+</strong> ARR.</li>
-                    <li>Automated Snowflake + dbt pipelines using CTEs and window functions, cutting reporting runtime by <strong>40%</strong> and ensuring real-time data refreshes.</li>
-                    <li>Eliminated manual Jira reporting with dbt macros + SQL, providing automated daily updates for executive KPIs.</li>
-                    <li>Implemented QA framework in Excel Power Query and dbt tests, saving <strong>20+ audit hours/month</strong> across <strong>$50M+</strong> transactions.</li>
-                    <li>Improved KPI accuracy by <strong>25%</strong> through lineage validation and automated error tracking.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <h3>Data Analyst</h3>
-                        <p class="company">Northeastern University, Boston, USA</p>
-                    </div>
-                    <span class="date">Oct 2023 – Aug 2024</span>
-                </div>
-                <ul>
-                    <li>Automated Snowflake ↔ AWS ETL (S3, Glue, Lambda, Athena, Redshift), cutting manual ingestion by <strong>90%</strong> and streamlining <strong>50+ tables</strong>.</li>
-                    <li>Led a <strong>3-member</strong> effort to optimize Glue (partitioning, predicate pushdown, schema evolution), reducing runtime by <strong>30%</strong> and scaling to <strong>1M+ records/month</strong>.</li>
-                    <li>Ran A/B tests on new KPI logic; applied <strong>t-tests/chi-square (95% confidence)</strong>, improving metric consistency by <strong>10%</strong>.</li>
-                    <li>Built QuickSight KPI dashboards for finance &amp; operations with daily refreshes, accelerating reporting cycles and executive visibility.</li>
-                    <li>Validated <strong>100K+ multi-source</strong> records in PostgreSQL and Alteryx, ensuring <strong>99.5%</strong> data reliability for cross-functional teams.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <h3>Data Analyst Intern</h3>
-                        <p class="company">Corizo, Bengaluru, India</p>
-                    </div>
-                    <span class="date">Jan 2023 - Jun 2023</span>
-                </div>
-                <ul>
-                    <li>Led a 3-member team to build ARIMA and Prophet models forecasting weekly product demand with <strong>92%</strong> accuracy, improving stock planning and reducing inventory costs by <strong>15%</strong>.</li>
-                    <li>Automated variance reporting with VBA, Power Query, and SQL, reducing manual effort by <strong>80%</strong> and speeding up insights.</li>
-                    <li>Developed Tableau dashboards visualizing forecast vs. actuals, category trends, and fulfillment KPIs, supporting strategic resource allocation.</li>
-                    <li>Partnered with supply chain and finance teams to operationalize forecasts, cutting excess inventory by <strong>10%</strong> and boosting fulfillment efficiency.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <h3>Data &amp; ML Assistant</h3>
-                        <p class="company">Vellore Institute of Technology, India</p>
-                    </div>
-                    <span class="date">Jan 2022 – Dec 2022</span>
-                </div>
-                <ul>
-                    <li>Built Snowflake SQL validation checks (CTEs, window functions) resolving <strong>60+</strong> issues across <strong>10</strong> financial tables, improving accuracy on <strong>1M+</strong> records.</li>
-                    <li>Designed Tableau dashboards for KPI tracking, cutting audit-prep time by <strong>35%</strong> and improving operational visibility.</li>
-                    <li>Automated Excel reporting (Power Query, PivotTables, VBA) to deliver timely, error-free management reports.</li>
-                    <li>Defined and maintained data-quality &amp; reporting KPIs; collaborated with cross-functional teams to resolve discrepancies.</li>
-                    <li>Optimized PySpark pipelines on Hadoop, reducing processing time by <strong>40%</strong> and increasing downstream data availability.</li>
-                </ul>
+        <div class="project-card" id="project-flights">
+            <div class="project-image">✈️</div>
+            <div class="project-content">
+                <h3>Flights and Public Holidays Dashboard</h3>
+                <p class="tech">Power BI | Data Visualization | Calendar Heatmap</p>
+                <p>Built an interactive Power BI dashboard analyzing U.S. flight ticket prices around major public holidays (pre-COVID). Visualized price fluctuations by airline, booking agency, and destination state. Included traveler volume map and calendar heatmap revealing that prices peak on holidays and drop immediately after, with states like Delaware showing consistently higher fares.</p>
+                <a href="https://github.com/ashmita-code/powerbi-flights-holidays-dashboard" target="_blank" class="project-link">View on GitHub →</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="projects" class="projects">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card" id="project-autoconnect">
-                <div class="project-image">🚗</div>
-                <div class="project-content">
-                    <h3>AutoConnect: Streamlined Car Reselling Solutions</h3>
-                    <p class="tech">SQL | MongoDB | Neo4j | Python</p>
-                    <p>Directed a 3-member team to design a centralized database for vehicle purchases and sales. Utilized SQL, MongoDB, and Neo4j to capture and query 500+ customer, agent, and vehicle links, reducing lookup time by 30%. Combined SQL and Python to analyze sales trends, customer preferences, and inventory performance.</p>
-                    <a href="https://github.com/ashmita-code/autoconnect" target="_blank" class="project-link">View on GitHub →</a>
-                </div>
-            </div>
-            <div class="project-card" id="project-ecommerce">
-                <div class="project-image">📊</div>
-                <div class="project-content">
-                    <h3>E-Commerce Transaction Analysis</h3>
-                    <p class="tech">Python | Pandas | Power BI | RFM Analysis</p>
-                    <p>Performed RFM analysis on an E-Commerce dataset, segmenting customers for retention and targeting strategies. Found 85% "At-Risk/Hibernating" vs. 15% "Loyal" customers, with loyal buyers driving 60% of CLV. Built Power BI dashboards to highlight cohort behavior and showed targeted retention could raise revenue 25%.</p>
-                    <a href="https://github.com/ashmita-code/ecommerce-analysis" target="_blank" class="project-link">View on GitHub →</a>
-                </div>
-            </div>
-            <div class="project-card" id="project-diabetes">
-                <div class="project-image">🏥</div>
-                <div class="project-content">
-                    <h3>Diabetes Analysis and Prediction</h3>
-                    <p class="tech">Python | Machine Learning | Data Analysis</p>
-                    <p>Developed machine learning models to predict diabetes outcomes using patient health data. Implemented classification algorithms to identify high-risk patients and analyzed key health indicators. Created data visualizations to communicate findings and support healthcare decision-making with predictive insights.</p>
-                    <a href="https://github.com/ashmita-code/diabetes-analysis-and-prediction" target="_blank" class="project-link">View on GitHub →</a>
-                </div>
-            </div>
-            <div class="project-card" id="project-flights">
-                <div class="project-image">✈️</div>
-                <div class="project-content">
-                    <h3>Flights and Public Holidays Dashboard</h3>
-                    <p class="tech">Power BI | Data Visualization | Calendar Heatmap</p>
-                    <p>Built an interactive Power BI dashboard analyzing U.S. flight ticket prices around major public holidays (pre-COVID). Visualized price fluctuations by airline, booking agency, and destination state. Included traveler volume map and calendar heatmap revealing that prices peak on holidays and drop immediately after, with states like Delaware showing consistently higher fares.</p>
-                    <a href="https://github.com/ashmita-code/powerbi-flights-holidays-dashboard" target="_blank" class="project-link">View on GitHub →</a>
-                </div>
+<section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-container">
+        <div class="skill-category">
+            <h3>Programming &amp; Analytics</h3>
+            <div class="skills-list">
+                <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">R</span>
+                <span class="skill-tag">C++</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span>
+                <span class="skill-tag">Statistical Modeling</span><span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Scikit-learn</span>
             </div>
         </div>
-    </section>
-
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3>Programming &amp; Analytics</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">R</span>
-                    <span class="skill-tag">C++</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span>
-                    <span class="skill-tag">Statistical Modeling</span><span class="skill-tag">Machine Learning</span>
-                    <span class="skill-tag">Scikit-learn</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Data Engineering &amp; Databases</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">Snowflake</span><span class="skill-tag">AWS (S3, Glue, Lambda, Athena)</span>
-                    <span class="skill-tag">dbt</span><span class="skill-tag">PySpark</span><span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Neo4j</span>
-                    <span class="skill-tag">Hadoop</span><span class="skill-tag">Talend</span><span class="skill-tag">Git</span>
-                    <span class="skill-tag">Jira</span><span class="skill-tag">Linux</span><span class="skill-tag">Alteryx</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Visualization &amp; BI Tools</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">Tableau</span><span class="skill-tag">Power BI</span><span class="skill-tag">Looker</span>
-                    <span class="skill-tag">QuickSight</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span>
-                    <span class="skill-tag">Excel (Advanced)</span><span class="skill-tag">Power Query</span><span class="skill-tag">Google Sheets</span>
-                </div>
+        <div class="skill-category">
+            <h3>Data Engineering &amp; Databases</h3>
+            <div class="skills-list">
+                <span class="skill-tag">Snowflake</span><span class="skill-tag">AWS (S3, Glue, Lambda, Athena)</span>
+                <span class="skill-tag">dbt</span><span class="skill-tag">PySpark</span><span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Neo4j</span>
+                <span class="skill-tag">Hadoop</span><span class="skill-tag">Talend</span><span class="skill-tag">Git</span>
+                <span class="skill-tag">Jira</span><span class="skill-tag">Linux</span><span class="skill-tag">Alteryx</span>
             </div>
         </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Let's Connect</h2>
-        <p style="max-width: 600px; margin: 0 auto 2rem; color: #475569;">I'm always interested in discussing data analytics opportunities, collaborating on projects, or simply connecting with fellow data enthusiasts.</p>
-        <div class="contact-info">
-            <div class="contact-item">
-                <strong>Email:</strong><br>
-                <a href="mailto:ashmitapal2848@gmail.com">ashmitapal2848@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <strong>Phone:</strong><br>
-                <a href="tel:+18576547663">+1 (857) 654-7663</a>
-            </div>
-            <div class="contact-item">
-                <strong>Location:</strong><br>
-                Boston, MA 02130
-            </div>
-            <div class="contact-item">
-                <strong>LinkedIn:</strong><br>
-                <a href="https://www.linkedin.com/in/ashmita-pal" target="_blank">linkedin.com/in/ashmita-pal</a>
-            </div>
-            <div class="contact-item">
-                <strong>GitHub:</strong><br>
-                <a href="https://github.com/ashmita-code" target="_blank">github.com/ashmita-code</a>
-            </div>
-            <div class="contact-item">
-                <strong>HackerRank:</strong><br>
-                <a href="https://www.hackerrank.com/profile/ashmitapal2848" target="_blank">hackerrank.com/profile/ashmitapal2848</a>
-            </div>
-            <div class="contact-item">
-                <strong>Tableau Certificate:</strong><br>
-                <a href="https://www.credly.com/badges/6b656032-3ccd-4bb0-aa39-48c8b2175537/public_url" target="_blank">View on Credly</a>
+        <div class="skill-category">
+            <h3>Visualization &amp; BI Tools</h3>
+            <div class="skills-list">
+                <span class="skill-tag">Tableau</span><span class="skill-tag">Power BI</span><span class="skill-tag">Looker</span>
+                <span class="skill-tag">QuickSight</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span>
+                <span class="skill-tag">Excel (Advanced)</span><span class="skill-tag">Power Query</span><span class="skill-tag">Google Sheets</span>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <a href="#home" class="back-to-top" id="backToTop">↑</a>
-    <footer><p>&copy; 2026 Ashmita Pal. All rights reserved.</p></footer>
+<section class="profiles" id="profiles-certs" style="background:#ffffff;">
+    <h2>Profiles &amp; Certifications</h2>
+    <div class="profiles-grid">
+        <a class="profile-card" href="https://github.com/ashmita-code" target="_blank">
+            <span class="profile-icon">💻</span>
+            <div class="profile-title">GitHub</div>
+            <div class="profile-sub">Projects &amp; repositories</div>
+        </a>
+        <a class="profile-card" href="https://www.hackerrank.com/profile/ashmitapal2848" target="_blank">
+            <span class="profile-icon">🧠</span>
+            <div class="profile-title">HackerRank</div>
+            <div class="profile-sub">Coding practice &amp; badges</div>
+        </a>
+        <a class="profile-card" href="https://www.credly.com/badges/6b656032-3ccd-4bb0-aa39-48c8b2175537/public_url" target="_blank">
+            <span class="profile-icon">🏅</span>
+            <div class="profile-title">Tableau Certificate</div>
+            <div class="profile-sub">View credential on Credly</div>
+        </a>
+    </div>
+</section>
 
-    <script>
-        const canvas = document.getElementById('particles-canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-        let particles = []; const particleCount = 80; const connectionDistance = 150;
-        class Particle {
-            constructor(){ this.x=Math.random()*canvas.width; this.y=Math.random()*canvas.height;
-                this.vx=(Math.random()-0.5)*0.5; this.vy=(Math.random()-0.5)*0.5; this.radius=2; }
-            update(){ this.x+=this.vx; this.y+=this.vy;
-                if(this.x<0||this.x>canvas.width) this.vx*=-1;
-                if(this.y<0||this.y>canvas.height) this.vy*=-1; }
-            draw(){ ctx.beginPath(); ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);
-                ctx.fillStyle='rgba(255,255,255,0.7)'; ctx.fill(); }
-        }
-        function init(){ particles=[]; for(let i=0;i<particleCount;i++) particles.push(new Particle()); }
-        function connectParticles(){
-            for(let i=0;i<particles.length;i++){
-                for(let j=i+1;j<particles.length;j++){
-                    const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y;
-                    const distance=Math.sqrt(dx*dx+dy*dy);
-                    if(distance<connectionDistance){
-                        const opacity=1-(distance/connectionDistance);
-                        ctx.beginPath(); ctx.strokeStyle=`rgba(255,255,255,${opacity*0.3})`; ctx.lineWidth=1;
-                        ctx.moveTo(particles[i].x,particles[i].y); ctx.lineTo(particles[j].x,particles[j].y); ctx.stroke();
-                    }
+<section id="contact" class="contact">
+    <h2>Let's Connect</h2>
+    <p style="max-width: 600px; margin: 0 auto 2rem; color: #475569;">I'm always interested in discussing data analytics opportunities, collaborating on projects, or simply connecting with fellow data enthusiasts.</p>
+    <div class="contact-info">
+        <div class="contact-item"><strong>Email:</strong><br><a href="mailto:ashmitapal2848@gmail.com">ashmitapal2848@gmail.com</a></div>
+        <div class="contact-item"><strong>Phone:</strong><br><a href="tel:+18576547663">+1 (857) 654-7663</a></div>
+        <div class="contact-item"><strong>Location:</strong><br>United States</div>
+        <div class="contact-item"><strong>LinkedIn:</strong><br><a href="https://www.linkedin.com/in/ashmita-pal" target="_blank">linkedin.com/in/ashmita-pal</a></div>
+        <div class="contact-item"><strong>GitHub:</strong><br><a href="https://github.com/ashmita-code" target="_blank">github.com/ashmita-code</a></div>
+        <div class="contact-item"><strong>HackerRank:</strong><br><a href="https://www.hackerrank.com/profile/ashmitapal2848" target="_blank">hackerrank.com/profile/ashmitapal2848</a></div>
+        <div class="contact-item"><strong>Tableau Certificate:</strong><br><a href="https://www.credly.com/badges/6b656032-3ccd-4bb0-aa39-48c8b2175537/public_url" target="_blank">View on Credly</a></div>
+    </div>
+</section>
+
+<a href="#home" class="back-to-top" id="backToTop">↑</a>
+<footer><p>&copy; 2026 Ashmita Pal. All rights reserved.</p></footer>
+
+<script>
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    let particles = []; const particleCount = 80; const connectionDistance = 150;
+    class Particle {
+        constructor(){ this.x=Math.random()*canvas.width; this.y=Math.random()*canvas.height;
+            this.vx=(Math.random()-0.5)*0.5; this.vy=(Math.random()-0.5)*0.5; this.radius=2; }
+        update(){ this.x+=this.vx; this.y+=this.vy;
+            if(this.x<0||this.x>canvas.width) this.vx*=-1;
+            if(this.y<0||this.y>canvas.height) this.vy*=-1; }
+        draw(){ ctx.beginPath(); ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);
+            ctx.fillStyle='rgba(255,255,255,0.7)'; ctx.fill(); }
+    }
+    function init(){ particles=[]; for(let i=0;i<particleCount;i++) particles.push(new Particle()); }
+    function connectParticles(){
+        for(let i=0;i<particles.length;i++){
+            for(let j=i+1;j<particles.length;j++){
+                const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y;
+                const distance=Math.sqrt(dx*dx+dy*dy);
+                if(distance<connectionDistance){
+                    const opacity=1-(distance/connectionDistance);
+                    ctx.beginPath(); ctx.strokeStyle=`rgba(255,255,255,${opacity*0.3})`; ctx.lineWidth=1;
+                    ctx.moveTo(particles[i].x,particles[i].y); ctx.lineTo(particles[j].x,particles[j].y); ctx.stroke();
                 }
             }
         }
-        function animate(){
-            ctx.clearRect(0,0,canvas.width,canvas.height);
-            particles.forEach(p=>{ p.update(); p.draw(); }); connectParticles();
-            requestAnimationFrame(animate);
-        }
-        window.addEventListener('resize', ()=>{ canvas.width=window.innerWidth; canvas.height=window.innerHeight; init(); });
-        init(); animate();
+    }
+    function animate(){
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        particles.forEach(p=>{ p.update(); p.draw(); }); connectParticles();
+        requestAnimationFrame(animate);
+    }
+    window.addEventListener('resize', ()=>{ canvas.width=window.innerWidth; canvas.height=window.innerHeight; init(); });
+    init(); animate();
 
-        const projectCards = document.querySelectorAll('.project-card');
-        projectCards.forEach(card => {
-            card.addEventListener('mouseenter', () => { card.style.transform = 'translateY(-10px)'; });
-            card.addEventListener('mouseleave', () => { card.style.transform = 'translateY(0)'; });
-        });
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', () => { card.style.transform = 'translateY(-10px)'; });
+        card.addEventListener('mouseleave', () => { card.style.transform = 'translateY(0)'; });
+    });
 
-        function toggleMenu(){ const n=document.getElementById('navLinks'); const h=document.querySelector('.hamburger');
-            n.classList.toggle('active'); h.classList.toggle('active'); }
-        function closeMenu(){ const n=document.getElementById('navLinks'); const h=document.querySelector('.hamburger');
-            n.classList.remove('active'); h.classList.remove('active'); }
+    function toggleMenu(){ const n=document.getElementById('navLinks'); const h=document.querySelector('.hamburger');
+        n.classList.toggle('active'); h.classList.toggle('active'); }
+    function closeMenu(){ const n=document.getElementById('navLinks'); const h=document.querySelector('.hamburger');
+        n.classList.remove('active'); h.classList.remove('active'); }
 
-        const funFactsRows = [
-            ['001','hobbies','Dance & reading crime novels'],
-            ['002','data_fun','Loves solving SQL murder mystery games'],
-            ['003','guilty_pleasure','Anything chocolate'],
-            ['004','daily_ritual','Wordle every morning, no exceptions'],
-            ['005','unpopular_opinion','Excel is underrated'],
-            ['006','fun_fact','Can finish a 300-page book in half a day'],
-            ['007','data_pet_peeve','Unlabeled axes, wrong scales — data visualization crimes'],
-            ['008','dream_dataset',"Netflix — who wouldn't want to analyze binge-watching patterns?"],
-            ['009','if_i_were_a_chart','A bar chart — straightforward, no nonsense, gets the point across'],
-            ['010','love_language','Clean, well-documented code with annotations'],
-        ];
-        function runFunFactsQuery() {
-            const btn = document.getElementById('sqlRunBtn');
-            const spinner = document.getElementById('sqlSpinner');
-            const btnIcon = document.getElementById('sqlBtnIcon');
-            const btnText = document.getElementById('sqlBtnText');
-            const status = document.getElementById('sqlStatus');
-            const tbody = document.getElementById('sqlTbody');
-            const resultsWrap = document.getElementById('sqlResultsWrap');
-            const footer = document.getElementById('sqlFooter');
-            const resetBtn = document.getElementById('sqlResetBtn');
-            btn.disabled = true;
-            btnIcon.style.display = 'none';
-            spinner.style.display = 'block';
-            btnText.textContent = 'Executing...';
-            status.textContent = 'Connecting to ashmita.fun_facts...';
-            tbody.innerHTML = '';
-            resultsWrap.style.display = 'none';
-            footer.style.opacity = '0';
-            resetBtn.style.display = 'none';
-            setTimeout(() => { status.textContent = 'Scanning table... 10 rows found'; }, 500);
+    const funFactsRows = [
+        ['001','hobbies','Dance & reading crime novels'],
+        ['002','data_fun','Loves solving SQL murder mystery games'],
+        ['003','guilty_pleasure','Anything chocolate'],
+        ['004','daily_ritual','Wordle every morning, no exceptions'],
+        ['005','unpopular_opinion','Excel is underrated'],
+        ['006','fun_fact','Can finish a 300-page book in half a day'],
+        ['007','data_pet_peeve','Unlabeled axes, wrong scales — data visualization crimes'],
+        ['008','dream_dataset',"Netflix — who wouldn't want to analyze binge-watching patterns?"],
+        ['009','if_i_were_a_chart','A bar chart — straightforward, no nonsense, gets the point across'],
+        ['010','love_language','Clean, well-documented code with annotations'],
+    ];
+    function runFunFactsQuery() {
+        const btn = document.getElementById('sqlRunBtn');
+        const spinner = document.getElementById('sqlSpinner');
+        const btnIcon = document.getElementById('sqlBtnIcon');
+        const btnText = document.getElementById('sqlBtnText');
+        const status = document.getElementById('sqlStatus');
+        const tbody = document.getElementById('sqlTbody');
+        const resultsWrap = document.getElementById('sqlResultsWrap');
+        const footer = document.getElementById('sqlFooter');
+        const resetBtn = document.getElementById('sqlResetBtn');
+        btn.disabled = true;
+        btnIcon.style.display = 'none';
+        spinner.style.display = 'block';
+        btnText.textContent = 'Executing...';
+        status.textContent = 'Connecting to ashmita.fun_facts...';
+        tbody.innerHTML = '';
+        resultsWrap.style.display = 'none';
+        footer.style.opacity = '0';
+        resetBtn.style.display = 'none';
+        setTimeout(() => { status.textContent = 'Scanning table... 10 rows found'; }, 500);
+        setTimeout(() => {
+            status.textContent = 'Fetching results...';
+            resultsWrap.style.display = 'block';
+            funFactsRows.forEach((r, i) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td class="td-id">${r[0]}</td><td class="td-cat">${r[1]}</td><td class="td-val">${r[2]}</td>`;
+                tbody.appendChild(tr);
+                setTimeout(() => tr.classList.add('sql-row-visible'), i * 120);
+            });
             setTimeout(() => {
-                status.textContent = 'Fetching results...';
-                resultsWrap.style.display = 'block';
-                funFactsRows.forEach((r, i) => {
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = `<td class="td-id">${r[0]}</td><td class="td-cat">${r[1]}</td><td class="td-val">${r[2]}</td>`;
-                    tbody.appendChild(tr);
-                    setTimeout(() => tr.classList.add('sql-row-visible'), i * 120);
-                });
-                setTimeout(() => {
-                    status.textContent = '';
-                    spinner.style.display = 'none';
-                    btnIcon.style.display = 'inline';
-                    btnText.textContent = 'Run query';
-                    btn.disabled = false;
-                    document.getElementById('sqlRowCount').innerHTML = '<span>10 rows returned</span> &nbsp;|&nbsp; query time: 0.003s';
-                    footer.style.opacity = '1';
-                    resetBtn.style.display = 'flex';
-                }, funFactsRows.length * 120 + 200);
-            }, 1200);
-        }
-        function resetFunFactsQuery() {
-            document.getElementById('sqlTbody').innerHTML = '';
-            document.getElementById('sqlResultsWrap').style.display = 'none';
-            document.getElementById('sqlFooter').style.opacity = '0';
-            document.getElementById('sqlStatus').textContent = '';
-            document.getElementById('sqlResetBtn').style.display = 'none';
-        }
+                status.textContent = '';
+                spinner.style.display = 'none';
+                btnIcon.style.display = 'inline';
+                btnText.textContent = 'Run query';
+                btn.disabled = false;
+                document.getElementById('sqlRowCount').innerHTML = '<span>10 rows returned</span> &nbsp;|&nbsp; query time: 0.003s';
+                footer.style.opacity = '1';
+                resetBtn.style.display = 'flex';
+            }, funFactsRows.length * 120 + 200);
+        }, 1200);
+    }
+    function resetFunFactsQuery() {
+        document.getElementById('sqlTbody').innerHTML = '';
+        document.getElementById('sqlResultsWrap').style.display = 'none';
+        document.getElementById('sqlFooter').style.opacity = '0';
+        document.getElementById('sqlStatus').textContent = '';
+        document.getElementById('sqlResetBtn').style.display = 'none';
+    }
 
-        const typingPhrases = [
-            "SELECT * FROM opportunities WHERE passion = 'data'",
-            "turning messy data into clean stories",
-            "WHERE insight IS NOT NULL",
-            "data whispers patterns — I turn them into insights",
-            "GROUP BY curiosity ORDER BY impact DESC",
-        ];
-        let tpi = 0, tci = 0, tDeleting = false;
-        const typingEl = document.getElementById('typingText');
-        function typeEffect() {
-            const phrase = typingPhrases[tpi];
-            if (!tDeleting) {
-                typingEl.textContent = phrase.substring(0, tci + 1);
-                tci++;
-                if (tci === phrase.length) { tDeleting = true; setTimeout(typeEffect, 1800); return; }
-                setTimeout(typeEffect, 55);
-            } else {
-                typingEl.textContent = phrase.substring(0, tci - 1);
-                tci--;
-                if (tci === 0) { tDeleting = false; tpi = (tpi + 1) % typingPhrases.length; setTimeout(typeEffect, 400); return; }
-                setTimeout(typeEffect, 28);
-            }
+    const typingPhrases = [
+        "SELECT * FROM opportunities WHERE passion = 'data'",
+        "turning messy data into clean stories",
+        "WHERE insight IS NOT NULL",
+        "data whispers patterns — I turn them into insights",
+        "GROUP BY curiosity ORDER BY impact DESC",
+    ];
+    let tpi = 0, tci = 0, tDeleting = false;
+    const typingEl = document.getElementById('typingText');
+    function typeEffect() {
+        const phrase = typingPhrases[tpi];
+        if (!tDeleting) {
+            typingEl.textContent = phrase.substring(0, tci + 1);
+            tci++;
+            if (tci === phrase.length) { tDeleting = true; setTimeout(typeEffect, 1800); return; }
+            setTimeout(typeEffect, 55);
+        } else {
+            typingEl.textContent = phrase.substring(0, tci - 1);
+            tci--;
+            if (tci === 0) { tDeleting = false; tpi = (tpi + 1) % typingPhrases.length; setTimeout(typeEffect, 400); return; }
+            setTimeout(typeEffect, 28);
         }
-        typeEffect();
+    }
+    typeEffect();
 
-        window.addEventListener('scroll', ()=>{
-            const b=document.getElementById('backToTop');
-            if(window.pageYOffset>300){ b.classList.add('visible'); } else { b.classList.remove('visible'); }
-
-            const scrollBar = document.getElementById('scroll-progress-bar');
-            const scrollFill = document.getElementById('scroll-progress-fill');
-            const scrollPct = document.getElementById('scroll-progress-pct');
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const pct = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
-            scrollFill.style.width = pct + '%';
-            scrollPct.textContent = pct + '%';
-            if (scrollTop > 100) { scrollBar.classList.add('visible'); } else { scrollBar.classList.remove('visible'); }
-        });
-    </script>
+    window.addEventListener('scroll', ()=>{
+        const b=document.getElementById('backToTop');
+        if(window.pageYOffset>300){ b.classList.add('visible'); } else { b.classList.remove('visible'); }
+        const scrollBar = document.getElementById('scroll-progress-bar');
+        const scrollFill = document.getElementById('scroll-progress-fill');
+        const scrollPct = document.getElementById('scroll-progress-pct');
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const pct = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
+        scrollFill.style.width = pct + '%';
+        scrollPct.textContent = pct + '%';
+        if (scrollTop > 100) { scrollBar.classList.add('visible'); } else { scrollBar.classList.remove('visible'); }
+    });
+</script>
 </body>
 </html>
